@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>    
-    <PackageReference Include="Ground.Core.Domain" Version="1.0.2" />
+    <PackageReference Include="Ground.Core.Domain" Version="2.0.0" />
     <PackageReference Include="Ground.Extensions.MessageBus.RabbitMQ" Version="1.0.0" />
     <PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3" />

@@ -8,10 +8,7 @@
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
 		<PackageTags>$(AssemblyName)</PackageTags>
 		<Authors>Abbas Vosoughi</Authors>
-		<Description>
-			$(AssemblyName)
-			MIT
-		</Description>
+		<Description>$(AssemblyName)</Description>
 		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
