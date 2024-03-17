@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<PackageVersion>1.0.1</PackageVersion>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>$(AssemblyName)</Title>
+		<Authors>Abbas Vosoughi</Authors>
+		<PackageProjectUrl>https://github.com/vosooghi/ProMicroservice/tree/main/Ground</PackageProjectUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Beta</PackageTags>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<Description>$(AssemblyName)</Description>
+		<PackageIcon>Icon.png</PackageIcon>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ground.Core.Domain" Version="1.0.2" />
+    <PackageReference Include="Ground.Extensions.Events.Abstractions" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.UsersManagement.Abstractions" Version="1.0.0" />
+    <PackageReference Include="Ground.Infra.Data.Sql.Commands" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

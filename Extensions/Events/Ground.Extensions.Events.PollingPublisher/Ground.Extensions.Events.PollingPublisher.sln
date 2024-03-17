@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Events.PollingPublisher", "Ground.Extensions.Events.PollingPublisher\Ground.Extensions.Events.PollingPublisher.csproj", "{C75ACDE7-2733-4613-ABF6-F8722BB4F9F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Events.PollingPublisher.Dal.Dapper", "Ground.Extensions.Events.PollingPublisher.Dal.Dapper\Ground.Extensions.Events.PollingPublisher.Dal.Dapper.csproj", "{AA39168C-4F62-45BB-80EB-9566C9F38F85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C75ACDE7-2733-4613-ABF6-F8722BB4F9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75ACDE7-2733-4613-ABF6-F8722BB4F9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75ACDE7-2733-4613-ABF6-F8722BB4F9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75ACDE7-2733-4613-ABF6-F8722BB4F9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA39168C-4F62-45BB-80EB-9566C9F38F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA39168C-4F62-45BB-80EB-9566C9F38F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA39168C-4F62-45BB-80EB-9566C9F38F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA39168C-4F62-45BB-80EB-9566C9F38F85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3659D74A-CD63-4EE6-BC1B-3CD932C0588A}
+	EndGlobalSection
+EndGlobal

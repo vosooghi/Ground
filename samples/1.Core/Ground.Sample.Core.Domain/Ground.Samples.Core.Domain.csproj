@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\1.Utilities\Ground.Utilities\Ground.Utilities.csproj" />
+    <ProjectReference Include="..\..\..\src\2.Core\Ground.Core.Domain\Ground.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

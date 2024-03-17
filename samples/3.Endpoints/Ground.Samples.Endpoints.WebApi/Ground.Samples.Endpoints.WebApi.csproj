@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ground.Extensions.Caching.InMemory" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.DependencyInjection" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.ObjectMappers.AutoMapper" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.Translations.Trani" Version="1.0.0" />
+    <PackageReference Include="Ground.Extensions.UsersManagement" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\4.Endpoints\Ground.Endpoints.WebApi\Ground.Endpoints.WebApi.csproj" />
+    <ProjectReference Include="..\..\1.Core\Ground.Sample.Core.ApplicationServices\Ground.Samples.Core.ApplicationServices.csproj" />
+    <ProjectReference Include="..\..\1.Core\Ground.Sample.Core.Contracts\Ground.Samples.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\1.Core\Ground.Sample.Core.Domain\Ground.Samples.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\2.Infra\Data\Ground.Samples.Infra.Data.Sql.Commands\Ground.Samples.Infra.Data.Sql.Commands.csproj" />
+    <ProjectReference Include="..\..\2.Infra\Data\Ground.Samples.Infra.Data.Sql.Queries\Ground.Samples.Infra.Data.Sql.Queries.csproj" />
+  </ItemGroup>
+
+</Project>

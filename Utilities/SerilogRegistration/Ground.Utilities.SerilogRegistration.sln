@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ground.Utilities.SerilogRegistration", "Ground.Utilities.SerilogRegistration\Ground.Utilities.SerilogRegistration.csproj", "{DDAA3760-8043-40AE-9410-338287E97157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Utilities.SerilogRegistration.Sample", "Ground.Utilities.SerilogRegistration.Sample\Ground.Utilities.SerilogRegistration.Sample.csproj", "{B799EB72-5027-4736-948D-202CFC43424A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDAA3760-8043-40AE-9410-338287E97157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAA3760-8043-40AE-9410-338287E97157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAA3760-8043-40AE-9410-338287E97157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAA3760-8043-40AE-9410-338287E97157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B799EB72-5027-4736-948D-202CFC43424A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B799EB72-5027-4736-948D-202CFC43424A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B799EB72-5027-4736-948D-202CFC43424A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B799EB72-5027-4736-948D-202CFC43424A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFF6EE98-127B-45FF-88C4-16F190D8FA61}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\3.Infra\Data\Ground.Infra.Data.Sql.Command\Ground.Infra.Data.Sql.Commands.csproj" />
+    <ProjectReference Include="..\..\..\1.Core\Ground.Sample.Core.Contracts\Ground.Samples.Core.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\1.Core\Ground.Sample.Core.Domain\Ground.Samples.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

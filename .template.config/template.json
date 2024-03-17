@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Abbas Vosoughi",
+  "classifications": [ "Common", "Solution","Ground" ],
+  "identity": "Ground.Default.SolutionTemplate.CSharp",
+  "name": "Ground Default Solution Template",
+  "shortName": "GroundSln",
+  "SourceName:"Ground",
+  "preferNameDirectory": true,
+  "tags":{"language":"C#","type":"project"}
+}

@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Title>$(AssemblyName)</Title>
+		<Authors>Abbas Vosoughi</Authors>
+		<PackageProjectUrl>https://github.com/vosooghi/ProMicroservice/tree/main/Ground</PackageProjectUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Beta</PackageTags>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<Description>$(AssemblyName)</Description>
+		<PackageIcon>Icon.png</PackageIcon>
+		<OutputType>Library</OutputType>
+		<IsPackable>true</IsPackable>
+		<VersionPrefix>1.0.2</VersionPrefix>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		<!--<PackageReference Include="Ground.Extensions.Caching.Abstractions" Version="1.0.0" />-->
+		<!--<PackageReference Include="Ground.Extensions.Logger.Abstractions" Version="1.0.0" />-->
+		<!--<PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="1.0.0" />-->
+		<!--<PackageReference Include="Ground.Extensions.Translations.Abstractions" Version="1.0.0" />-->
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.14" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.4" />
+		<PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="7.0.14" />
+		<PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="7.0.14" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+		<PackageReference Include="Scrutor" Version="4.2.2" />
+		<!--<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />-->
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\1.Utilities\Ground.Utilities\Ground.Utilities.csproj" />
+		<ProjectReference Include="..\..\2.Core\Ground.Core.ApplicationServices\Ground.Core.ApplicationServices.csproj" />
+		<ProjectReference Include="..\..\2.Core\Ground.Core.Contracts\Ground.Core.Contracts.csproj" />
+		<ProjectReference Include="..\..\2.Core\Ground.Core.Domain\Ground.Core.Domain.csproj" />
+		<!--<ProjectReference Include="..\..\3.Infra\Data\Ground.Infra.Data.Sql.Command\Ground.Infra.Data.Sql.Commands.csproj" />-->
+		<!--<ProjectReference Include="..\..\3.Infra\Data\Ground.Infra.Data.Sql.Queries\Ground.Infra.Data.Sql.Queries.csproj" />-->
+		<ProjectReference Include="..\..\3.Infra\Data\Ground.Infra.Data.Sql\Ground.Infra.Data.Sql.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Icon.png">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
+		<None Update="LICENSE.txt">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
+		<None Update="readme.md">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
+	</ItemGroup>
+
+</Project>

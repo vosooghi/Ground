@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Serializers.NewtonSoft", "Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj", "{79E7E6C2-B197-4289-BC22-809735C72580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Serializers.NewtonSoft.Sample", "Ground.Extensions.Serializers.NewtonSoft.Sample\Ground.Extensions.Serializers.NewtonSoft.Sample.csproj", "{F9427086-C8C9-49AE-9ED6-9B8486041B48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E7E6C2-B197-4289-BC22-809735C72580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E7E6C2-B197-4289-BC22-809735C72580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E7E6C2-B197-4289-BC22-809735C72580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E7E6C2-B197-4289-BC22-809735C72580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9427086-C8C9-49AE-9ED6-9B8486041B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9427086-C8C9-49AE-9ED6-9B8486041B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9427086-C8C9-49AE-9ED6-9B8486041B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9427086-C8C9-49AE-9ED6-9B8486041B48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE1A0632-455B-4256-A43E-AC4A951502D6}
+	EndGlobalSection
+EndGlobal
