@@ -1,1 +1,1 @@
-﻿Ground.Extensions.Events.Abstractions
+﻿Ground.Extensions.ChangeDataLog.Abstractions
