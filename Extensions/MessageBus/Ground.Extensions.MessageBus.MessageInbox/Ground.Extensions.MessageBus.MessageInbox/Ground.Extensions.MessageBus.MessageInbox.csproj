@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
@@ -29,10 +29,10 @@
   <ItemGroup>
     <PackageReference Include="Ground.Core.Contracts" Version="1.0.2" />
     <PackageReference Include="Ground.Core.RequestResponse" Version="1.0.1" />
-    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
