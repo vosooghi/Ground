@@ -12,30 +12,27 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+IConfiguration configuration = builder.Configuration;
+
 /// <summary>
 /// Trani translator needs database configs
 /// Database reload time
 /// the Database should be created before.
 /// </summary>
-TraniTranslatorOptions options = new TraniTranslatorOptions();
-DefaultTranslationOption[] translationOption = new DefaultTranslationOption[]
-{
-    new DefaultTranslationOption(){Key = "TITLE", Value = "ÚäæÇä", Culture = "fa-IR" },
-    new DefaultTranslationOption(){ Key = "TITLE", Value = "Title", Culture = "en-US" }
-};
-builder.Services.AddGroundTraniTranslator(c =>
-{
-    c.ConnectionString = "Server=.; Initial Catalog=TraniSampleDb; User Id=sa; Password=P@ssw0rd;encrypt=false";
-    c.AutoCreateSqlTable = true;
-    c.SchemaName = "dbo";
-    c.TableName = "TraniTranslations";
-    c.ReloadDataIntervalInMinuts = 1;
-    c.DefaultTranslations = translationOption;
-    //[C# 12
-    //    new() { Key = "TITLE", Value = "ÚäæÇä", Culture = "fa-IR" },
-    //    new() { Key = "TITLE", Value = "Title", Culture = "en-US" },
-    //];
-});
+builder.Services.AddGroundTraniTranslator(configuration, "TraniTranslator");
+//builder.Services.AddGroundTraniTranslator(c =>
+//{
+//    c.ConnectionString = "Server=.; Initial Catalog=TraniSampleDb; User Id=sa; Password=P@ssw0rd;encrypt=false";
+//    c.AutoCreateSqlTable = true;
+//    c.SchemaName = "dbo";
+//    c.TableName = "TraniTranslations";
+//    c.ReloadDataIntervalInMinuts = 1;
+//    c.DefaultTranslations =
+//    [
+//        new() { Key = "TITLE", Value = "ÚäæÇä", Culture = "fa-IR" },
+//        new() { Key = "TITLE", Value = "Title", Culture = "en-US" },
+//    ];
+//});
 
 var app = builder.Build();
 

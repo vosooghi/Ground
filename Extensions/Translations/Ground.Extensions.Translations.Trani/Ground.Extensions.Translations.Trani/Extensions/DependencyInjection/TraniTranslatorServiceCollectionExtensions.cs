@@ -8,16 +8,16 @@ namespace Ground.Extensions.DependencyInjection
 {
     public static class TraniTranslatorServiceCollectionExtensions
     {
-        //public static IServiceCollection AddGroundTraniTranslator(this IServiceCollection services, IConfiguration configuration)
-        //{
-        //    services.AddSingleton<ITranslator, TraniTranslator>();
-        //    //services.Configure<TraniTranslatorOptions>(configuration);            
-        //    return services;
-        //}
+        public static IServiceCollection AddGroundTraniTranslator(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddSingleton<ITranslator, TraniTranslator>();
+            services.Configure<TraniTranslatorOptions>(configuration);            
+            return services;
+        }
 
         public static IServiceCollection AddGroundTraniTranslator(this IServiceCollection services, IConfiguration configuration, string sectionName)
         {
-            //services.AddGroundTraniTranslator(configuration.GetSection(sectionName));
+            services.AddGroundTraniTranslator(configuration.GetSection(sectionName));
             services.AddSingleton<ITranslator, TraniTranslator>();
             services.Configure<TraniTranslatorOptions>(options =>configuration.GetSection(sectionName));
             return services;
