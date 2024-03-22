@@ -1,30 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Title>$(AssemblyName)</Title>
-    <Authors>Abbas Vosoughi</Authors>
-    <PackageProjectUrl>https://github.com/vosooghi/ProMicroservice/tree/main/Ground</PackageProjectUrl>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>Beta</PackageTags>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Description>$(AssemblyName)
-MIT</Description>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <Title>$(AssemblyName)</Title>
+	  <PackageReadmeFile>readme.md</PackageReadmeFile>
+	  <PackageTags>$(AssemblyName)</PackageTags>
+	  <Authors>Abbas Vosoughi</Authors>
+	  <Description>
+		  $(AssemblyName)
+		  MIT
+	  </Description>
+	  <PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
+	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+	  <Version>2.0.0</Version>
+	  <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ground.Extensions.DependencyInjection.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+    <PackageReference Include="Ground.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
     <PackageReference Include="Scrutor" Version="4.2.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

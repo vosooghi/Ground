@@ -1,18 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
-		<Authors>Abbas Vosoughi</Authors>
-		<PackageProjectUrl>https://github.com/vosooghi/ProMicroservice/tree/main/Ground</PackageProjectUrl>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageTags>$(AssemblyName)</PackageTags>
+		<Authors>Abbas Vosoughi</Authors>
+		<Description>
+			$(AssemblyName)
+			MIT
+		</Description>
+		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>Beta</PackageTags>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<Description>$(AssemblyName)</Description>
+		<Version>2.0.0</Version>
 		<PackageIcon>Icon.png</PackageIcon>
 	</PropertyGroup>
 

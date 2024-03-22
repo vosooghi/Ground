@@ -1,42 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
-		<Authors>Abbas Vosoughi</Authors>
-		<PackageProjectUrl>https://github.com/vosooghi/ProMicroservice/tree/main/Ground</PackageProjectUrl>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<RepositoryType>git</RepositoryType>
-		<PackageTags>Beta</PackageTags>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageTags>$(AssemblyName)</PackageTags>
+		<Authors>Abbas Vosoughi</Authors>
 		<Description>$(AssemblyName)</Description>
+		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<Version>2.0.0</Version>
 		<PackageIcon>Icon.png</PackageIcon>
 	</PropertyGroup>
 
-	<ItemGroup>
-	  <None Include="C:\Users\Abbas\Desktop\Icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Include="C:\Users\Abbas\Desktop\readme.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Ground.Core.Contracts" Version="1.0.2" />
-    <PackageReference Include="Ground.Core.RequestResponse" Version="1.0.1" />
-    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+    <PackageReference Include="Ground.Core.Contracts" Version="2.0.0" />
+    <PackageReference Include="Ground.Core.RequestResponse" Version="2.0.0" />
+    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="readme.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

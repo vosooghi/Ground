@@ -2,15 +2,10 @@
 using Ground.Core.Domain.Events;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Core.ApplicationServices.Events
-{   
+{
 
     public class EventDispatcher : IEventDispatcher
     {

@@ -1,1 +1,1 @@
-﻿Ground.Extensions.DependencyInjection.Abstratctions
+﻿Ground.Extensions.UsersManagement.Abstractions

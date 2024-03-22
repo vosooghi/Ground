@@ -1,1 +1,1 @@
-﻿Ground.Extensions.DependencyInjection
+﻿Ground.Extensions.Translations.Trani

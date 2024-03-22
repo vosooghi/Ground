@@ -1,1 +1,1 @@
-﻿Ground.Utilities.SerilogRegistration
+﻿Ground.Utilities.OpenTelemetryRegistration

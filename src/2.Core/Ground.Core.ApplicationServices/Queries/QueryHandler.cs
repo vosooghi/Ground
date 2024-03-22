@@ -9,7 +9,7 @@ namespace Ground.Core.ApplicationServices.Queries
     public abstract class QueryHandler<TQuery, TData> : IQueryHandler<TQuery, TData>
         where TQuery : class, IQuery<TData>
     {
-        protected readonly GroundServices _zaminServices;
+        protected readonly GroundServices _groundServices;
         protected readonly QueryResult<TData> result = new();
 
         protected virtual Task<QueryResult<TData>> ResultAsync(TData data, ApplicationServiceStatus status)
@@ -38,19 +38,19 @@ namespace Ground.Core.ApplicationServices.Queries
             return Result(data, status);
         }
 
-        public QueryHandler(GroundServices zaminServices)
+        public QueryHandler(GroundServices groundServices)
         {
-            _zaminServices = zaminServices;
+            _groundServices = groundServices;
         }
 
         protected void AddMessage(string message)
         {
-            result.AddMessage(_zaminServices.Translator[message]);
+            result.AddMessage(_groundServices.Translator[message]);
         }
 
         protected void AddMessage(string message, params string[] arguments)
         {
-            result.AddMessage(_zaminServices.Translator[message, arguments]);
+            result.AddMessage(_groundServices.Translator[message, arguments]);
         }
 
         public abstract Task<QueryResult<TData>> Handle(TQuery query);
