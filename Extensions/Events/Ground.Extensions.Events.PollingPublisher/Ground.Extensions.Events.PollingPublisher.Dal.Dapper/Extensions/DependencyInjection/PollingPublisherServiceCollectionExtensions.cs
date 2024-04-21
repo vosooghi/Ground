@@ -4,7 +4,7 @@ using Ground.Extensions.Events.PollingPublisher.Dal.Dapper.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Ground.Extensions.Events.PollingPublisher.Dal.Dapper.Extensions.DependencyInjection
+namespace Ground.Extensions.DependencyInjection
 {
     public static class PollingPublisherServiceCollectionExtensions
     {
