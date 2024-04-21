@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ground.Extensions.Caching.InMemory" Version="2.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ground.Utilities.Authentication.ApiAuthentication\Ground.Utilities.Authentication.ApiAuthentication.csproj" />
+  </ItemGroup>
+
+</Project>

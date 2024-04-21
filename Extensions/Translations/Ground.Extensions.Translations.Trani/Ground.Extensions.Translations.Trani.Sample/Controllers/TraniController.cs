@@ -19,5 +19,10 @@ namespace Ground.Extensions.Translations.Trani.Sample.Controllers
         {
             return Ok(_translator.GetString(key));
         }
+        [HttpGet(Name = "GetTranslation")]
+        public IActionResult Get(string key)
+        {
+            return Ok(_translator.GetString(key));
+        }
     }
 }

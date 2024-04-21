@@ -1,0 +1,6 @@
+@Ground.Utilities.Authentication.ApiAuthentication.Sample_HostAddress = http://localhost:5030
+
+GET {{Ground.Utilities.Authentication.ApiAuthentication.Sample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
