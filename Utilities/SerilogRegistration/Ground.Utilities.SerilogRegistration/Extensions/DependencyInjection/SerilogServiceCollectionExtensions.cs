@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Serilog;
 using Serilog.Core;
 using Serilog.Enrichers.Span;
@@ -38,7 +39,7 @@ namespace Ground.Extensions.DependencyInjection
 
             //IHttpContextAccessor is not registered by default.
             //https://github.com/aspnet/Hosting/issues/793
-            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             builder.Services.AddTransient<GroundUserInfoEnricher>();
             builder.Services.AddTransient<GroundApplicaitonEnricher>();
