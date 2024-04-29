@@ -31,10 +31,10 @@ namespace Ground.Extensions.UsersManagement.Services
         => _httpContextAccessor.HttpContext?.User?.GetClaim(_configuration.DefaultUserNameClaim) ?? _configuration.DefaultUsername;
 
         public string GetFirstName()
-        => _httpContextAccessor.HttpContext?.User?.GetClaim(ClaimTypes.GivenName) ?? _configuration.DefaultFirstName;
+        => _httpContextAccessor.HttpContext?.User?.GetClaim(_configuration.DefaultFirstNameClaim) ?? _configuration.DefaultFirstName;
 
         public string GetLastName()
-        => _httpContextAccessor.HttpContext?.User?.GetClaim(ClaimTypes.Surname) ?? _configuration.DefaultLastName;
+        => _httpContextAccessor.HttpContext?.User?.GetClaim(_configuration.DefaultLastNameClaim) ?? _configuration.DefaultLastName;
 
         public bool IsCurrentUser(string userId)
         {
