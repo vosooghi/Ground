@@ -2,6 +2,8 @@ using Ground.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+IConfiguration configuration = builder.Configuration;
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -18,10 +20,20 @@ builder.Services.AddAuthentication(options =>
     });
 
 builder.Services.AddHttpContextAccessor();
+
+//Ground
 builder.Services.AddGroundWebUserInfoService(c =>
 {
-    c.DefaultUserId = "1";
+    c.DefaultUserIdClaim = "sid";
+    c.DefaultUserNameClaim = "preferred_username";
 });
+//Type.1
+//builder.Services.AddGroundWebUserInfoService(configuration);
+//Type.2
+//builder.Services.AddGroundWebUserInfoService(c =>
+//{    
+//    c.DefaultUserId = "1";
+//});
 
 var app = builder.Build();
 

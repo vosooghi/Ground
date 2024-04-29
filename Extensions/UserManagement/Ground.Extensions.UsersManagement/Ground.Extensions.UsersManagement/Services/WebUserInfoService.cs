@@ -25,10 +25,10 @@ namespace Ground.Extensions.UsersManagement.Services
         => _httpContextAccessor.HttpContext?.Connection?.RemoteIpAddress?.ToString() ?? _configuration.DefaultUserIp;
 
         public string UserId()
-        => _httpContextAccessor?.HttpContext?.User?.GetClaim(ClaimTypes.NameIdentifier) ?? string.Empty;
+        => _httpContextAccessor?.HttpContext?.User?.GetClaim(_configuration.DefaultUserIdClaim) ?? string.Empty;
 
         public string GetUsername()
-        => _httpContextAccessor.HttpContext?.User?.GetClaim(ClaimTypes.Name) ?? _configuration.DefaultUsername;
+        => _httpContextAccessor.HttpContext?.User?.GetClaim(_configuration.DefaultUserNameClaim) ?? _configuration.DefaultUsername;
 
         public string GetFirstName()
         => _httpContextAccessor.HttpContext?.User?.GetClaim(ClaimTypes.GivenName) ?? _configuration.DefaultFirstName;
