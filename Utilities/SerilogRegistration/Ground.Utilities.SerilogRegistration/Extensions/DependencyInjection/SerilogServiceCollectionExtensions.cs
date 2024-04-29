@@ -1,6 +1,7 @@
 ﻿using Ground.Utilities.SerilogRegistration.Enrichers;
 using Ground.Utilities.SerilogRegistration.Options;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -34,6 +35,10 @@ namespace Ground.Extensions.DependencyInjection
         {
 
             List<ILogEventEnricher> logEventEnrichers = new();
+
+            //IHttpContextAccessor is not registered by default.
+            //https://github.com/aspnet/Hosting/issues/793
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             builder.Services.AddTransient<GroundUserInfoEnricher>();
             builder.Services.AddTransient<GroundApplicaitonEnricher>();
