@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">a framework based on onion architecture to implement software projects regarding microservice architecture</h4>
+<h4 align="center">a framework based on onion architecture to implement software projects regarding microservice architecture and DDD</h4>
 
 <p align="center">
   <a href="https://www.nuget.org/packages/Ground.Solution.Templates">
@@ -15,32 +15,53 @@
 </p>
 
 <p align="center">
-  <a href="#Structure">Framework Structure</a> •
+  <a href="#Onion Structure">Framework Structure</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#license">License</a>
 </p>
 
-## Structure
+# Onion Structure
+   This framework is implemented by considering the following approaches:
+   • Domain-Driven Design
+   • Separation of Concern
+   • Layer Architecture
+   • Dependency Injection     
+* <b>src</b>
+  1. Utilities
+     * Ground.Utilities
+       - DateTime converters, Helper classes, Extensions (String, Guid, Linq, ...)
+  2. <b>Core</b>
+    * Ground.Core.Domain
+       </br>This layer is an abstract of the real world: core business logic, aggregate roots, entities, value objects, and application business rules without any dependency on technology.
+       </br>This  is layer is implemented according to the Domain-Driven Design <a href="https://github.com/ddd-crew/ddd-starter-modelling-process">DDD Crew</a>
+       Entities
+        * AggregateRoot: <a href="">More Info</a>
+          - Entity: Base Entity Class
+          - IAuditableEntity: a markup interface to make an entity auditable (used in the Infra layer)
+        * Events
+        * Value Objects
+        * Exceptions
+    *  Ground.Core.DomainToolkit
+       <p>Shared Value Objects</p>
+    *  Ground.Core.RequestResponse
+         <p>Templates of messages between layers</p>
+    *  Ground.Core.Contracts
+         <p>The contracts of infrastructures, command and query handlers, and repositories</p>
+    *  Ground.Core.ApplicationServices
+         <p>Implements use cases and orchestrates the interaction between the domain and infrastructure layers.</p>
+  3. <b>Infra</b>
+     <p>Handles external dependencies and technical details: Database, Serialization, API Caller, Security, ...</p>
+    *  Data
+         <p>The data infrastructure is implemented according to the CQRS</p>
+    *    Ground.Infra.Data.Sql
+    *    Ground.Infra.Data.Sql.Commands
+           <p>Interceptors, Extensions (Audit, ShadowProperties), Value converters, Base CommandDBContext</p>
+    *    Ground.Infra.Data.Sql.Queries
+  4. <b>Endpoint</b>
+     <p>RESTful APIs</p>
+  5. <b>tests</b>
+  6. <b>sample</b>
 
-* Onion Structure
-  - Sepration of Concern
-  - Inner layers do not know the outer layers. 
-* Domain Layer
-  - This layer is an abstract of the real world: core business logic, aggregate roots, entities, value objects, and application business rules without any dependency on technology.
-  - This layer is implemented according to the Domain-Driven Design <a href="https://github.com/ddd-crew/ddd-starter-modelling-process">DDD Crew</a>
-* Contract Layer
-  - Application service layer and Data layer contracts: Query and Command handlers and DTOs.
-  - Repository definition
-  - UoW definition
-* Application Service
-  - Implements use cases and orchestrates the interaction between the domain and infrastructure layers.
-* Request Response Layer
-  - Command/Query request and response abstraction and implementation
-* Infrastructure Layer
-  - Handles external dependencies and technical details: Database, Serialization, API Caller, Security, Notification
-* Endpoint Layer
-  - Web API
-  - Web UI
 
 ## How To Use
 
