@@ -55,7 +55,7 @@ namespace Ground.Extensions.Translations.Trani.Database
                 string table = _configuration.TableName;
                 string schema = _configuration.SchemaName;
 
-                _logger.LogInformation("Trani Translator tries to create table in database with connection {ConnectionString}. Schema name is {Schema}. Table name is {TableName}", _configuration.ConnectionString, schema, table);
+                _logger.LogInformation("Trani Translator tries to create table in database. Schema name is {Schema}. Table name is {TableName}", schema, table);
 
 
                 string createTable = $"IF (NOT EXISTS (SELECT *  FROM INFORMATION_SCHEMA.TABLES WHERE " +
