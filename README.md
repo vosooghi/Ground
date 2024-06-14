@@ -64,7 +64,34 @@ This framework is implemented by considering the following approaches:
 * <b>sample</b>
 
 ## Extensions
-* 
+* Ground.Extensions.Abstractions
+  * The abstract model of extensions. You can implement each extension and use it in the framework or utilize the following implemented extensions:
+    * Ground.Extensions.DependencyInjection; automatically injects extensions to the DI container if your service is inherited from IScopelifetime, ISingletonLifetime, or ITransientLifetime.
+    * Ground.Extensions.Caching.InMemory
+    * Events (Transactional Messaging)
+      * Ground.Extensions.Events.Outbox, <a href="https://microservices.io/patterns/data/transactional-outbox.html">More Info</a>
+      * Ground.Extensions.Events.PollingPublisher, <a href="https://microservices.io/patterns/data/polling-publisher.html">More Info</a>
+    * Messaging, <a href="https://softwaremill.com/microservices-101/">More Info</a>
+      * Ground.Extensions.MessageBus.MessageInbox
+      * Ground.Extensions.MessageBus.RabbitMQ
+    * Serializers
+      * Ground.Extensions.Serializers.NewtonSoft
+    * Translations
+      * Ground.Extensions.Translations.Trani
+    * UserManagement
+      * Ground.Extensions.UsersManagement
+    * ObjectMappers
+      *  Ground.Extensions.ObjectMappers.AutoMapper
+
+## Utilities
+* Observability
+  * Ground.Utilities.OpenTelemetryRegistration
+    * Jaeger
+  * SerilogRegistration
+    * ELK
+    * SQL Server
+    * File
+
 ## How To Use
 
 To install Ground Template Project:
