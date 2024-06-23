@@ -9,8 +9,8 @@ namespace Ground.Samples.Core.Domain.People.ValueObjects
         public string Value { get; private set; }
         public LastName(string value)
         {
-            value = value.Trim();
             if (string.IsNullOrEmpty(value)) throw new InvalidValueObjectStateException(Messages.InvalidNullValue, Messages.FirstName);
+            value = value.Trim();            
             if (value.Length < 2 || value.Length > 50) throw new InvalidValueObjectStateException(Messages.InvalidStringLength, "2", "50");
             Value = value;
         }
