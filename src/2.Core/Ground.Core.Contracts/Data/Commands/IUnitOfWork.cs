@@ -7,28 +7,28 @@
     public interface IUnitOfWork
     {
         /// <summary>
-        /// در صورت نیاز به کنترل تراکنش‌ها از این متد جهت شروع تراکنش استفاده می‌شود.
+        /// use this method to start transactions manually.
         /// </summary>
         void BeginTransaction();
 
         /// <summary>
-        /// در صورت کنترل دستی تراکنش از این متد جهت پایان موفقیت آمیز تراکنش استفاده می‌شود.
+        /// use this method to commit when the transaction manually created.
         /// </summary>
         void CommitTransaction();
 
         /// <summary>
-        /// در صورت بروز خطا در فرایند‌ها از این متد جهت بازگشت تغییرات استفاده می‌شود.
+        /// When an error occured.
         /// </summary>
         void RollbackTransaction();
 
         /// <summary>
-        /// برای تایید تراکنشی که اتوماتیک توسط سیستم ایجاد شده است از این متد استفاده می‌شود.
+        /// To commit transaction which is automaticlly created by the system.
         /// </summary>
         /// <returns></returns>
         int Commit();
 
         /// <summary>
-        /// برای تایید تراکنشی که اتوماتیک توسط سیستم ایجاد شده است از این متد استفاده می‌شود.
+        /// To commit transaction which is automaticlly created by the system.
         /// </summary>
         /// <returns></returns>
         Task<int> CommitAsync();

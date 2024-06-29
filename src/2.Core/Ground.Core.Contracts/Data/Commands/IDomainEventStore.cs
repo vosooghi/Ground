@@ -3,7 +3,7 @@
 namespace Ground.Core.Contracts.Data.Commands
 {
     /// <summary>
-    /// در صورت نیاز به ذخیره و بازیابی eventها از این اینترفیس استفاده می‌شود.
+    /// To save and restore events
     /// </summary>
     public interface IDomainEventStore
     {

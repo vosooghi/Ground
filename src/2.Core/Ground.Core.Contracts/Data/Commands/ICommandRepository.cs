@@ -19,40 +19,40 @@ namespace Ground.Core.Contracts.Data.Commands
               IFormattable
     {
         /// <summary>
-        /// یک شی را با شناسه حذف می کند
+        /// Delete on entity with specified Id
         /// </summary>
-        /// <param name="id">شناسه</param>
+        /// <param name="id">Id</param>
         void Delete(TId id);
 
         /// <summary>
-        /// حذف یک شی به همراه تمامی فرزندان آن را انجام می دهد
+        /// Delete an entity with specified Id and it's sub entities.
         /// </summary>
-        /// <param name="id">شناسه</param>
+        /// <param name="id">Id</param>
         void DeleteGraph(TId id);
 
         /// <summary>
-        /// یک شی را دریافت کرده و از دیتابیس حذف می‌کند
+        /// Delete the given entity
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">Entity</param>
         void Delete(TEntity entity);
 
         /// <summary>
-        /// داده‌های جدید را به دیتابیس اضافه می‌کند
+        /// Insert the entity into the Database
         /// </summary>
-        /// <param name="entity">نمونه داده‌ای که باید به دیتابیس اضافه شود.</param>
+        /// <param name="entity">Entity</param>
         void Insert(TEntity entity);
 
         /// <summary>
-        /// داده‌های جدید را به دیتابیس اضافه می‌کند
+        /// Insert the entity into the Database
         /// </summary>
-        /// <param name="entity">نمونه داده‌ای که باید به دیتابیس اضافه شود.</param>
+        /// <param name="entity">Entity</param>
         Task InsertAsync(TEntity entity);
 
         /// <summary>
-        /// یک شی را با شناسه از دیتابیس یافته و بازگشت می‌دهد.
+        /// Returns an entity with specified Id
         /// </summary>
-        /// <param name="id">شناسه شی مورد نیاز</param>
-        /// <returns>نمونه ساخته شده از شی</returns>
+        /// <param name="id">Id</param>
+        /// <returns>Entity</returns>
         TEntity Get(TId id);
         Task<TEntity> GetAsync(TId id);
         TEntity Get(BusinessId businessId);
