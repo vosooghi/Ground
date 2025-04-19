@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
@@ -13,14 +13,16 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<Description>$(AssemblyName)</Description>
 		<PackageIcon>Icon.png</PackageIcon>
+		<PackageReleaseNotes>.Net 9</PackageReleaseNotes>
+		<Version>3.0.0</Version>
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="1.0.0" />
-    <PackageReference Include="Ground.Utilities" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" />
+    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Utilities" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
   </ItemGroup>
 

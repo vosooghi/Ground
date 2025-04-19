@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
@@ -13,8 +13,9 @@
 		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<Version>2.0.0</Version>
+		<Version>3.0.0</Version>
 		<PackageIcon>Icon.png</PackageIcon>
+		<PackageReleaseNotes>.Net 9</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -22,16 +23,16 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ground.Extensions.Caching.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.Logger.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.ObjectMappers.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.Translations.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.UsersManagement.Abstractions" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="Ground.Extensions.Caching.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.Logger.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.ObjectMappers.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.Translations.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Ground.Extensions.UsersManagement.Abstractions" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.4" />
   </ItemGroup>
 
   <ItemGroup>
