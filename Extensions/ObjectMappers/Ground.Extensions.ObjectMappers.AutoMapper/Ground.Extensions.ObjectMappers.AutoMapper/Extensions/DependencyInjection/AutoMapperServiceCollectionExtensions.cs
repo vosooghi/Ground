@@ -21,7 +21,7 @@ namespace Ground.Extensions.DependencyInjection
 
             var assemblies = GetAssemblies(option.AssmblyNamesForLoadProfiles);
 
-            return services.AddAutoMapper(assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();
+            return services.AddAutoMapper(assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();            
         }
 
         public static IServiceCollection AddGroundAutoMapperProfiles(this IServiceCollection services, Action<AutoMapperOption> setupAction)
@@ -37,7 +37,10 @@ namespace Ground.Extensions.DependencyInjection
         private static List<Assembly> GetAssemblies(string assmblyNames)
         {
             var assemblies = new List<Assembly>();
-            var dependencies = DependencyContext.Default.RuntimeLibraries;
+            IReadOnlyList<RuntimeLibrary>? dependencies = DependencyContext.Default?.RuntimeLibraries;
+
+            if(dependencies == null)
+                return assemblies;
 
             foreach (var library in dependencies)
             {

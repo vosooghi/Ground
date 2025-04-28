@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
@@ -13,16 +13,17 @@
 		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<Version>2.0.0</Version>
+		<Version>3.0.0</Version>
 		<PackageIcon>Icon.png</PackageIcon>
+		<PackageReleaseNotes>.Net 9</PackageReleaseNotes>
 	</PropertyGroup>
 
 
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="8.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.3" />
-		<PackageReference Include="Ground.Extensions.Caching.Abstractions" Version="2.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
+		<PackageReference Include="Ground.Extensions.Caching.Abstractions" Version="3.0.0" />
 		<PackageReference Include="IdentityModel" Version="6.2.0" />
 		<PackageReference Include="IdentityModel.AspNetCore.OAuth2Introspection" Version="6.2.0" />
 

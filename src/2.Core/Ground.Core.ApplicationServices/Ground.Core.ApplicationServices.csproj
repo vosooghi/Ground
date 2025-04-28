@@ -2,7 +2,7 @@
 
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<Title>$(AssemblyName)</Title>
@@ -14,12 +14,13 @@
 		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<Version>2.0.0</Version>
+		<Version>3.0.0</Version>
 		<PackageIcon>Icon.png</PackageIcon>
+		<PackageReleaseNotes>.Net 9</PackageReleaseNotes>
 	</PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.9.0" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
   </ItemGroup>
 
   <ItemGroup>
