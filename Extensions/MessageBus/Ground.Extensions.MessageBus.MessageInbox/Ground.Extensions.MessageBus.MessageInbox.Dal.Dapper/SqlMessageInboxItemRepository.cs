@@ -4,7 +4,7 @@ using System.Data;
 using Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper
 {    
