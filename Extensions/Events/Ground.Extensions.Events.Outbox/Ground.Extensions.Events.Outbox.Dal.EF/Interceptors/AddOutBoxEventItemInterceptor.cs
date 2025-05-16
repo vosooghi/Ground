@@ -26,6 +26,11 @@ namespace Ground.Extensions.Events.Outbox.Dal.EF.Interceptors
 
         private static void AddOutbox(DbContextEventData eventData)
         {
+            if (eventData.Context == null)
+            {
+                throw new ArgumentNullException(nameof(eventData.Context), "DbContext cannot be null.");
+            }
+
             List<dynamic> changedAggregates = eventData.Context.ChangeTracker
                 .Entries<IAggregateRoot>()
                 .Where(x => x.State != EntityState.Detached)
