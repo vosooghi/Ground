@@ -16,6 +16,7 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<VersionPrefix>9.0.0</VersionPrefix>
 		<PackageIcon>Icon.png</PackageIcon>
+		<IsPackable>true</IsPackable>
 	</PropertyGroup>
 
   <ItemGroup>

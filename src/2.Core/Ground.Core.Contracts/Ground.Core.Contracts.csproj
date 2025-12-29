@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
@@ -15,12 +15,8 @@
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<VersionPrefix>9.0.0</VersionPrefix>
 		<PackageIcon>Icon.png</PackageIcon>
+		<IsPackable>true</IsPackable>
 	</PropertyGroup>
-
-
-	<ItemGroup>
-    <None Remove="readme.md~RF18233fb.TMP" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\1.Utilities\Ground.Utilities\Icon.png">

@@ -17,6 +17,7 @@
 		<PackageIcon>Icon.png</PackageIcon>
 		<OutputType>Library</OutputType>
 		<IsPackable>true</IsPackable>
+		<IsPackable>true</IsPackable>
 	</PropertyGroup>
 
 	<ItemGroup>
