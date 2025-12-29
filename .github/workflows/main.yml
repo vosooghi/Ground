@@ -22,7 +22,7 @@ jobs:
 
           dotnet pack \
             -c Release \
-            /p:Version=${{ github.event.release.tag_name }}
+            /p:Version=$VERSION
 
       - name: Push
         run: |
