@@ -10,7 +10,13 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>Icon.png</PackageIcon>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)Icon.png" Pack="true" PackagePath="" />
+		<None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>
