@@ -8,12 +8,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Ground.Extensions.DependencyInjection.Abstractions" Version="3.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\Ground.Extensions.Abstractions\Ground.Extensions.DependencyInjection.Abstractions\Ground.Extensions.DependencyInjection.Abstractions.csproj" />
 		<ProjectReference Include="..\Ground.Extensions.DependencyInjection\Ground.Extensions.DependencyInjection.csproj" />
 	</ItemGroup>
 

@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ground.Utilities.Authentica
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Utilities.Authentication.ApiAuthentication.Sample", "Ground.Utilities.Authentication.ApiAuthentication.Sample\Ground.Utilities.Authentication.ApiAuthentication.Sample.csproj", "{98FDA623-1A25-43AF-8476-16B18CE9E069}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Caching.Abstractions", "..\..\Extensions\Ground.Extensions.Abstractions\Ground.Extensions.Caching.Abstractions\Ground.Extensions.Caching.Abstractions.csproj", "{83E20800-4140-1143-CDDB-CD7D0F7990FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Caching.InMemory", "..\..\Extensions\Caching\Ground.Extensions.Caching.InMemory\Ground.Extensions.Caching.InMemory\Ground.Extensions.Caching.InMemory.csproj", "{3B14A0B5-A847-7805-EF9C-629E7F419899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Serializers.NewtonSoft", "..\..\Extensions\Serializers\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj", "{B25B25E8-F053-7604-4D21-65B96059F865}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{98FDA623-1A25-43AF-8476-16B18CE9E069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98FDA623-1A25-43AF-8476-16B18CE9E069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98FDA623-1A25-43AF-8476-16B18CE9E069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E20800-4140-1143-CDDB-CD7D0F7990FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E20800-4140-1143-CDDB-CD7D0F7990FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E20800-4140-1143-CDDB-CD7D0F7990FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E20800-4140-1143-CDDB-CD7D0F7990FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B14A0B5-A847-7805-EF9C-629E7F419899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B14A0B5-A847-7805-EF9C-629E7F419899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B14A0B5-A847-7805-EF9C-629E7F419899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B14A0B5-A847-7805-EF9C-629E7F419899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25B25E8-F053-7604-4D21-65B96059F865}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25B25E8-F053-7604-4D21-65B96059F865}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25B25E8-F053-7604-4D21-65B96059F865}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25B25E8-F053-7604-4D21-65B96059F865}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

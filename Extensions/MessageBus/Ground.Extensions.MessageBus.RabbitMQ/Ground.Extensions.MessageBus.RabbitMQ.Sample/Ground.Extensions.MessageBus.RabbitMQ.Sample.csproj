@@ -8,12 +8,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="1.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.15" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\Serializers\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj" />
 		<ProjectReference Include="..\Ground.Extensions.MessageBus.RabbitMQ\Ground.Extensions.MessageBus.RabbitMQ.csproj" />
 	</ItemGroup>
 

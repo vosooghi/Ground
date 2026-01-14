@@ -4,42 +4,18 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Title>$(AssemblyName)</Title>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageTags>$(AssemblyName)</PackageTags>
-		<Authors>Abbas Vosoughi</Authors>
-		<Description>$(AssemblyName)</Description>
-		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<VersionPrefix>9.0.0</VersionPrefix>
 		<IsPackable>true</IsPackable>
-		<PackageIcon>Icon.png</PackageIcon>		
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ground.Core.Contracts" Version="3.0.0" />
-    <PackageReference Include="Ground.Core.RequestResponse" Version="3.0.0" />
-    <PackageReference Include="Ground.Extensions.MessageBus.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyModel" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\src\2.Core\Ground.Core.Contracts\Ground.Core.Contracts.csproj" />
+		<ProjectReference Include="..\..\..\..\src\2.Core\Ground.Core.RequestResponse\Ground.Core.RequestResponse.csproj" />
+		<ProjectReference Include="..\..\..\Ground.Extensions.Abstractions\Ground.Extensions.MessageBus.Abstractions\Ground.Extensions.MessageBus.Abstractions.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -8,7 +8,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Ground.Extensions.UsersManagement.Abstractions" Version="3.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.4" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
@@ -16,6 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\Ground.Extensions.Abstractions\Ground.Extensions.UsersManagement.Abstractions\Ground.Extensions.UsersManagement.Abstractions.csproj" />
 		<ProjectReference Include="..\Ground.Extensions.UsersManagement\Ground.Extensions.UsersManagement.csproj" />
 	</ItemGroup>
 

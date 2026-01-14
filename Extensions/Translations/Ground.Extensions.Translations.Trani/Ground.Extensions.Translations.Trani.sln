@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Translati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Translations.Trani.Sample", "Ground.Extensions.Translations.Trani.Sample\Ground.Extensions.Translations.Trani.Sample.csproj", "{9FDA9003-1E56-4A72-AF8B-4150E05C9503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Translations.Abstractions", "..\..\Ground.Extensions.Abstractions\Ground.Extensions.Translations.Abstractions\Ground.Extensions.Translations.Abstractions.csproj", "{7536C59A-94D2-446B-FC44-1369D69C6357}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9FDA9003-1E56-4A72-AF8B-4150E05C9503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FDA9003-1E56-4A72-AF8B-4150E05C9503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FDA9003-1E56-4A72-AF8B-4150E05C9503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7536C59A-94D2-446B-FC44-1369D69C6357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7536C59A-94D2-446B-FC44-1369D69C6357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7536C59A-94D2-446B-FC44-1369D69C6357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7536C59A-94D2-446B-FC44-1369D69C6357}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

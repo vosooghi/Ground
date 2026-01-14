@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ground.Extensions.Caching.InMemory" Version="3.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="3.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Extensions\Caching\Ground.Extensions.Caching.InMemory\Ground.Extensions.Caching.InMemory\Ground.Extensions.Caching.InMemory.csproj" />
+    <ProjectReference Include="..\..\..\Extensions\Serializers\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj" />
     <ProjectReference Include="..\Ground.Utilities.Authentication.ApiAuthentication\Ground.Utilities.Authentication.ApiAuthentication.csproj" />
   </ItemGroup>
 

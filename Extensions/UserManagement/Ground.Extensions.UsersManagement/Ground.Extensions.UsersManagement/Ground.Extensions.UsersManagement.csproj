@@ -1,43 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Title>$(AssemblyName)</Title>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageTags>$(AssemblyName)</PackageTags>
-		<Authors>Abbas Vosoughi</Authors>
-		<Description>$(AssemblyName)</Description>
-		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<VersionPrefix>9.0.0</VersionPrefix>
 		<IsPackable>true</IsPackable>
-		<PackageIcon>Icon.png</PackageIcon>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Ground.Extensions.UsersManagement.Abstractions" Version="3.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Update="Icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Ground.Extensions.Abstractions\Ground.Extensions.UsersManagement.Abstractions\Ground.Extensions.UsersManagement.Abstractions.csproj" />
+	</ItemGroup>
 
 </Project>

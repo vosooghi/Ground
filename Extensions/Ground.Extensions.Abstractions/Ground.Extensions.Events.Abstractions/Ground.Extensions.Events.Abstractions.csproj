@@ -3,37 +3,6 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Title>$(AssemblyName)</Title>
-		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<PackageTags>$(AssemblyName)</PackageTags>
-		<Authors>Abbas Vosoughi</Authors>
-		<Description>
-			$(AssemblyName)
-			MIT
-		</Description>
-		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-		<VersionPrefix>9.0.0</VersionPrefix>
 		<IsPackable>true</IsPackable>
-		<PackageIcon>Icon.png</PackageIcon>
 	</PropertyGroup>
-
-
-	<ItemGroup>
-	  <None Update="Icon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Update="LICENSE.txt">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Update="readme.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
 </Project>
