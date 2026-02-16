@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Publish messages/events into the outbox in the database to the message broker</Description>
+		<PackageTags>ground events polling publisher</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

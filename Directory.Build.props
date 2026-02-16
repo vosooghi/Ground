@@ -2,16 +2,13 @@
 	<PropertyGroup>
 		<Authors>Abbas Vosoughi</Authors>
 		<Title>$(AssemblyName)</Title>
-		<PackageTags>$(AssemblyName)</PackageTags>
-		<Description>$(AssemblyName)</Description>
 		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageIcon>Icon.png</PackageIcon>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Nullable>enable</Nullable>
+		<PackageReadmeFile>README.md</PackageReadmeFile>		
 	</PropertyGroup>
 
 	<ItemGroup>

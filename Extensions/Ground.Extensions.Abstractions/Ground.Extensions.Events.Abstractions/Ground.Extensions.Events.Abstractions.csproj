@@ -4,5 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for event mechanisms. Interfaces and classes defined in this package are used in Ground microservice framework.</Description>
+		<PackageTags>ground events abstractions</PackageTags>
 	</PropertyGroup>
 </Project>

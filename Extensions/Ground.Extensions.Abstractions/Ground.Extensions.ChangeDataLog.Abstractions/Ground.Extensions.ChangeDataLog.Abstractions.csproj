@@ -4,5 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for change data log mechanisms. Interfaces defined in this package are used in Ground microservice framework.</Description>
+		<PackageTags>ground change data log abstractions</PackageTags>
 	</PropertyGroup>
 </Project>

@@ -1,5 +1,8 @@
 ﻿namespace Ground.Extensions.UsersManagement.Abstractions
 {
+    /// <summary>
+    /// Provides a contract for accessing information about the current user.
+    /// </summary>    
     public interface IUserInfoService
     {
         string GetUserAgent();

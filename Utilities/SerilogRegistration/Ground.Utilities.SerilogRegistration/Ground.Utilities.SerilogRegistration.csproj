@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Serilog registration utilities for Ground project</Description>
+		<PackageTags>Serilog, Logging, Utilities, Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

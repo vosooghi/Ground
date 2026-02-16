@@ -28,7 +28,7 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
         {
             return services.AddWithTransientLifetime(assemblies, typeof(ITransientLifetime))
                 .AddWithScopedLifetime(assemblies, typeof(IScopeLifetime))
-                .AddWithSingletonLifetime(assemblies, typeof(ISingletoneLifetime));
+                .AddWithSingletonLifetime(assemblies, typeof(ISingletonLifetime));
         }
 
         public static IServiceCollection AddWithTransientLifetime(this IServiceCollection services,

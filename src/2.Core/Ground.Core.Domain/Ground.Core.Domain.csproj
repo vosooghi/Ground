@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Defines the core domain entities and value objects for the Ground framework.</Description>
+		<PackageTags>Domain;Entities;ValueObjects;Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

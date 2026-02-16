@@ -4,5 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for translators. Interfaces defiened in this package is used in the Ground microservice framework.</Description>
+		<PackageTags>ground translator abstractions</PackageTags>
 	</PropertyGroup>
 </Project>

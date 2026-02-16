@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Implements message inbox pattern in Ground framework</Description>
+		<PackageTags> Ground framework message inbox</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

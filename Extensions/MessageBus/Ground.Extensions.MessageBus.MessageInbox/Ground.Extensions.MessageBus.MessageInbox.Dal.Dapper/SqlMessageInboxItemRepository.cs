@@ -7,7 +7,10 @@ using Microsoft.Extensions.Options;
 using Microsoft.Data.SqlClient;
 
 namespace Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper
-{    
+{
+    /// <summary>
+    /// The class is responsible for managing message inbox items in a SQL database using Dapper.
+    /// </summary>
     public class SqlMessageInboxItemRepository : IMessageInboxItemRepository
     {
         private readonly IDbConnection _dbConnection;
@@ -29,24 +32,24 @@ namespace Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper
 
         }
 
-        public bool AllowReceive(string messageId, string fromService)
+        public Task<bool> AllowReceive(string messageId, string fromService)
         {
             var result = _dbConnection.Query<long>(_selectQuery, new
             {
                 OwnerService = fromService,
                 MessageId = messageId
             }).FirstOrDefault();
-            return result < 1;
+            return Task.FromResult(result < 1);
         }
 
-        public void Receive(string messageId, string fromService, string payload)
+        public async Task Receive(string messageId, string fromService, string payload)
         {
-            _dbConnection.Execute(_insertQuery, new
+            await _dbConnection.ExecuteAsync(_insertQuery, new
             {
                 OwnerService = fromService,
                 MessageId = messageId,
                 Payload = payload
-            });
+            });            
         }
 
 

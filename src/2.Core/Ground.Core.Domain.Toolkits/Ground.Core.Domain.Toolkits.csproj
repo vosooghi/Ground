@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Defines the core domain toolkits for the Ground framework.</Description>
+		<PackageTags>Domain;Toolkits;Ground</PackageTags>
 	</PropertyGroup>
 
   <ItemGroup>

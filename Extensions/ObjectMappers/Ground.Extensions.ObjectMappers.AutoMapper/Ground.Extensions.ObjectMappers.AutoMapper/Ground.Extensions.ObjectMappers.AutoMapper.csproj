@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides AutoMapper integration for the Ground.Extensions.ObjectMappers library.</Description>
+		<PackageTags>AutoMapper, Ground.Extensions.ObjectMappers, Adapter</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

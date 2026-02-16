@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Translation extensions for Ground framework</Description>
+		<PackageTags>translations;ground;extensions</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

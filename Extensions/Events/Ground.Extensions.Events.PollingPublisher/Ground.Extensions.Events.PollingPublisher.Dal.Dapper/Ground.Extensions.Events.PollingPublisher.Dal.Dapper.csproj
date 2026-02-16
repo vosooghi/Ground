@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides SQL Server DAL implementation for the Polling Publisher using Dapper.</Description>
+		<PackageTags>ground events polling publisher dal dapper</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

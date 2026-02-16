@@ -4,5 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for user management mechanisms. Interfaces defiened in this package is used in the Ground microservice framework.</Description>
+		<PackageTags>ground user management abstractions</PackageTags>
 	</PropertyGroup>
 </Project>

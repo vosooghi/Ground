@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>OpenTelemetry registration utilities for Ground project</Description>
+		<PackageTags>Ground.Utilities.OpenTelemetryRegistration</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

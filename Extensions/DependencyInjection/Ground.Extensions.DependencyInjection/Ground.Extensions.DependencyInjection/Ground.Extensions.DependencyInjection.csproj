@@ -5,6 +5,8 @@
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>	 
 	  <IsPackable>true</IsPackable>
+	  <Description>Ground.Extensions.DependencyInjection is a library for dependency injection extensions in Ground framework.</Description>
+	  <PackageTags>ground dependency injection</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

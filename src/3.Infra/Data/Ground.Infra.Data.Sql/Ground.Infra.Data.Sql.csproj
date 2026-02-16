@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Implements the SQL Server data access layer for the Ground framework, providing repositories and database context.</Description>
+		<PackageTags>Data;SQL Server;Entity Framework Core;Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

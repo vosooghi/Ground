@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Defines the core request and response models for the Ground framework, including base classes and validation logic.</Description>
+		<PackageTags>RequestResponse;Models;Validation;Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

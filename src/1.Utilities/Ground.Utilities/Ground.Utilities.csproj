@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides utility functions and extensions for the Ground framework.</Description>
+		<PackageTags>Utilities;Extensions;Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

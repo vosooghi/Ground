@@ -8,8 +8,9 @@ using System.Data;
 
 namespace Ground.Extensions.Translations.Trani.Database
 {
-
-    
+    /// <summary>
+    /// Provides methods to interact with SQL Server database for Trani Translator. It loads all the localization records into memory and provides methods to get the value of a key for a specific culture. If the key is not found, it adds the key with the default value to the database and returns the key as the value.
+    /// </summary>
     public class TraniSqlRepository
     {
         private readonly IDbConnection _dbConnection;

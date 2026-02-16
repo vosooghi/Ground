@@ -2,6 +2,9 @@
 
 namespace Ground.Extensions.UsersManagement.Options
 {
+    /// <summary>
+    /// User management options for configuring default user information and claim types.
+    /// </summary>
     public sealed class UserManagementOptions
     {
         public string DefaultUserId { get; set; } = "1";

@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>API Authentication library for Ground Utilities</Description>
+		<PackageTags>Authentication;API;Ground</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

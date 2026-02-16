@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Defines the core contracts for the Ground framework, including interfaces and data transfer objects (DTOs).</Description>
+		<PackageTags>Contracts;DTOs;Ground</PackageTags>
 	</PropertyGroup>
 
   <ItemGroup>

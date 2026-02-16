@@ -4,5 +4,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for serializers. Interfaces defined in this package are used in Ground microservice framework.</Description>
+		<PackageTags>ground serializers abstractions</PackageTags>
 	</PropertyGroup>
 </Project>

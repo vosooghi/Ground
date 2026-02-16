@@ -36,7 +36,5 @@ namespace Ground.Extensions.Events.Outbox.Dal.EF
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new OutBoxEventItemConfig());
         }
-
-
     }
 }

@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Contains the application services for the Ground framework, including business logic and validation.</Description>
+		<PackageTags>ApplicationServices;BusinessLogic;Validation;Ground</PackageTags>	
 	</PropertyGroup>
 
 	<ItemGroup>

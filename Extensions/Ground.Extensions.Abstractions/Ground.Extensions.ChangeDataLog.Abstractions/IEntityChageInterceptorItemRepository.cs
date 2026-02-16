@@ -1,8 +1,11 @@
 ﻿namespace Ground.Extensions.ChangeDataLog.Abstractions
 {
-    public interface IEntityChageInterceptorItemRepository
+    /// <summary>
+    /// Defines methods for persisting a collection of entity change interceptor items.
+    /// </summary>
+    public interface IEntityChangeInterceptorItemRepository
     {
-        public void Save(List<EntityChageInterceptorItem> entityChageInterceptorItems);
-        public Task SaveAsync(List<EntityChageInterceptorItem> entityChageInterceptorItems);
+        public void Save(List<EntityChangeInterceptorItem> entityChangeInterceptorItems);
+        public Task SaveAsync(List<EntityChangeInterceptorItem> entityChangeInterceptorItems);
     }
 }

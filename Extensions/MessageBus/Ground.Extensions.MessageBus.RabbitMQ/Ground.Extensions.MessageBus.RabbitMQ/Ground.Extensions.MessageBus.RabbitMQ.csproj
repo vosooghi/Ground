@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>Provides RabbitMQ implementation for message bus. This package is part of Ground microservice framework.</Description>
+		<PackageTags>ground message bus rabbitmq</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

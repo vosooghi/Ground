@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
 using Ground.Extensions.ObjectMappers.Abstractions;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Extensions.ObjectMappers.AutoMapper.Services
 {
+    /// <summary>
+    /// Provides an implementation of the IMapperAdapter interface using AutoMapper.
+    /// </summary>
     public class AutoMapperAdapter : IMapperAdapter
     {
         private readonly IMapper _mapper;

@@ -5,6 +5,8 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<IsPackable>true</IsPackable>
+		<Description>In-memory caching implementation for using in the Ground framework</Description>
+		<PackageTags>ground framework caching in-memory</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
