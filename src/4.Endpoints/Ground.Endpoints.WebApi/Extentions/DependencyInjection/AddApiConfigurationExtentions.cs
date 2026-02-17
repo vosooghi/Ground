@@ -1,4 +1,5 @@
 ﻿using FluentValidation.AspNetCore;
+using Ground.Endpoints.WebApi.Filters;
 using Ground.Endpoints.WebApi.Middlewares.ApiExceptionHandler;
 using Microsoft.Data.SqlClient;
 
@@ -17,12 +18,11 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
         {
             services.AddControllers(options =>
             {
-                // options.Filters.Add(typeof(TrackActionPerformanceFilter));
+                 options.Filters.Add(typeof(TrackActionPerformanceFilter));
             }).AddFluentValidation();
             services.AddGroundDependencies(assemblyNamesForLoad);
             return services;
         }
-
 
         public static void UseGroundApiExceptionHandler(this IApplicationBuilder app)
         {

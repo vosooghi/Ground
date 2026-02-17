@@ -6,7 +6,7 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
 {
 
     /// <summary>
-    /// توابع کمکی جهت ثبت نیازمندی‌های لایه داده
+    /// Provides extension methods for registering data access services in the DI container.
     /// </summary>
     public static class AddDataAccessExtentsions
     {

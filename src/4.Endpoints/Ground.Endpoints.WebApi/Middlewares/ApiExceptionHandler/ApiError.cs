@@ -1,8 +1,7 @@
 ﻿namespace Ground.Endpoints.WebApi.Middlewares.ApiExceptionHandler
 {
     /// <summary>
-    /// Error class to show to the user
-    /// if we have a web application, we cand send html output
+    /// Represents an error that can be returned by the API.
     /// </summary>
     public class ApiError
     {

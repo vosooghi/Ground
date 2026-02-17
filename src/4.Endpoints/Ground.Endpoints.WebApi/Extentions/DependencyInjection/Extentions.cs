@@ -8,7 +8,12 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
 
     public static class Extentions
     {
-
+        /// <summary>
+        /// Add Ground dependencies, including application services, data access, utility services and custom dependencies
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="assemblyNamesForSearch"></param>
+        /// <returns></returns>
         public static IServiceCollection AddGroundDependencies(this IServiceCollection services,
             params string[] assemblyNamesForSearch)
         {

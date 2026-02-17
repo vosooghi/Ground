@@ -12,7 +12,9 @@ using Ground.Extensions.UsersManagement.Abstractions;
 
 namespace Ground.Infra.Data.Sql.Commands
 {
-
+    /// <summary>
+    /// Represents the base class for command DbContext.
+    /// </summary>
     public abstract class BaseCommandDbContext : DbContext
     {
         protected IDbContextTransaction _transaction;
@@ -72,10 +74,7 @@ namespace Ground.Infra.Data.Sql.Commands
             base.ConfigureConventions(configurationBuilder);
             configurationBuilder.Properties<Description>().HaveConversion<DescriptionConversion>();
             configurationBuilder.Properties<Title>().HaveConversion<TitleConversion>();
-            configurationBuilder.Properties<BusinessId>().HaveConversion<BusinessIdConversion>();
-            configurationBuilder.Properties<LegalNationalId>().HaveConversion<LegalNationalId>();
-            configurationBuilder.Properties<NationalCode>().HaveConversion<NationalCodeConversion>();
-
+            configurationBuilder.Properties<BusinessId>().HaveConversion<BusinessIdConversion>();            
         }
         public override int SaveChanges()
         {

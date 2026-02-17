@@ -6,13 +6,21 @@ using System.Linq.Expressions;
 
 namespace Ground.Infra.Data.Sql.Commands
 {
-
+    /// <summary>
+    /// Repository base class for command operations.
+    /// </summary>
+    /// <typeparam name="TEntity">The type of the entity.</typeparam>
+    /// <typeparam name="TDbContext">The type of the DbContext.</typeparam>
     public class BaseCommandRepository<TEntity, TDbContext> : ICommandRepository<TEntity,long>, IUnitOfWork
         where TEntity : AggregateRoot
         where TDbContext : BaseCommandDbContext
     {
         protected readonly TDbContext _dbContext;
-
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BaseCommandRepository{TEntity, TDbContext}"/> class.
+        /// </summary>
+        /// <param name="dbContext">The DbContext instance.</param>
         public BaseCommandRepository(TDbContext dbContext)
         {
             _dbContext = dbContext;

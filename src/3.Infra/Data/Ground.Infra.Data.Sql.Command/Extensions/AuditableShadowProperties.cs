@@ -5,6 +5,9 @@ using Ground.Extensions.UsersManagement.Abstractions;
 
 namespace Ground.Infra.Data.Sql.Commands.Extensions
 {
+    /// <summary>
+    /// An extension class for adding shadow properties to entities that implement the IAuditableEntity interface.
+    /// </summary>
     public static class AuditableShadowProperties
     {
         public static readonly Func<object, string> EFPropertyCreatedByUserId =

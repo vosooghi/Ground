@@ -35,21 +35,24 @@ namespace Ground.Samples.Endpoints.WebApi
             builder.Services.AddGroundAutoMapperProfiles(option =>
             {
                 option.AssmblyNamesForLoadProfiles = "Ground.Samples";
-            });
-
-            builder.Services.AddNonValidatingValidator();
+            });            
 
             builder.Services.AddGroundNewtonSoftSerializer();
 
             builder.Services.AddGroundInMemoryCaching();
 
             builder.Services.AddDbContext<SampleCommandDbContext>(c => c.UseSqlServer(conn));
+            
             builder.Services.AddDbContext<SampleQueryDbContext>(c => c.UseSqlServer(conn));
 
-            builder.Services.AddGroundApiCore("Ground");//= AddControllers(); FluentValidation();
+            builder.Services.AddGroundApiCore("Ground");
+
+            builder.Services.AddNonValidatingValidator();
 
             builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddSwaggerGen();
+
             return builder.Build();
         }
 

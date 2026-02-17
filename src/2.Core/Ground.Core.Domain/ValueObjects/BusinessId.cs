@@ -1,17 +1,15 @@
 ﻿using Ground.Core.Domain.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Core.Domain.ValueObjects
 {
+    /// <summary>
+    /// Domain Value Object representing a Business Identifier, which is a unique identifier for a business entity.
+    /// </summary>
     public class BusinessId : BaseValueObject<BusinessId>
     {
-        //Factory
+        
         public static BusinessId FromString(string value) => new(value);
-        //Factory
+        
         public static BusinessId FromGuid(Guid value) => new() { Value = value };
 
         public BusinessId(string value)
@@ -45,13 +43,11 @@ namespace Ground.Core.Domain.ValueObjects
         {
             yield return Value;
         }
-
-        //data lost possibility
+        
         public static explicit operator string(BusinessId title) => title.Value.ToString();
 
         public static implicit operator BusinessId(string value) => new(value);
-
-        //data lost possibility
+        
         public static explicit operator Guid(BusinessId title) => title.Value;
 
         public static implicit operator BusinessId(Guid value) => new() { Value = value };

@@ -1,15 +1,10 @@
 ﻿using Ground.Core.Domain.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Core.Domain.Entities
 {
     /// <summary>
-    /// AggregateRoot pattern
+    /// An aggregate is a cluster of domain objects that can be treated as a single unit.
     /// https://martinfowler.com/bliki/DDD_Aggregate.html
     /// It can be used with both State-based or Event-Driven apps.
     /// </summary>
@@ -62,7 +57,7 @@ namespace Ground.Core.Domain.Entities
         /// <summary>
         /// Returns a readonly list of the aggregate events
         /// </summary>
-        /// <returns>لیست Eventها</returns>
+        /// <returns>A list of events</returns>
         public IEnumerable<IDomainEvent> GetEvents() => _events.AsEnumerable();
 
         /// <summary>
@@ -70,8 +65,6 @@ namespace Ground.Core.Domain.Entities
         /// </summary>
         public void ClearEvents() => _events.Clear();
     }
-
-
 
     public abstract class AggregateRoot : AggregateRoot<long>
     {

@@ -2,6 +2,10 @@
 
 namespace Ground.Infra.Data.Sql.Commands
 {
+    /// <summary>
+    /// Represents the base implementation of the Unit of Work pattern for Entity Framework Core.
+    /// </summary>
+    /// <typeparam name="TDbContext"></typeparam>
     public abstract class BaseEntityFrameworkUnitOfWork<TDbContext> : IUnitOfWork
         where TDbContext : BaseCommandDbContext
     {

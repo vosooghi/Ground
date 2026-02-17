@@ -4,7 +4,9 @@ using System.Reflection;
 
 namespace Ground.Utilities.Extensions
 {
-
+    /// <summary>
+    /// Provides extension methods for LINQ operations, including dynamic ordering and conversion between lists and DataTables.
+    /// </summary>
     public static class LinqExtensions
     {
         /// <summary>

@@ -2,6 +2,9 @@
 
 namespace Ground.Infra.Data.Sql.Queries
 {
+    /// <summary>
+    /// Provides a base DbContext for read-only database operations with query tracking disabled.
+    /// </summary>
     public abstract class BaseQueryDbContext : DbContext
     {
         public BaseQueryDbContext(DbContextOptions options) : base(options)
@@ -18,9 +21,6 @@ namespace Ground.Infra.Data.Sql.Queries
             base.OnModelCreating(modelBuilder);
         }
 
-        /// <summary>
-        /// there is not savechange here.
-        /// </summary>
         public override int SaveChanges()
         {
             throw new NotSupportedException();

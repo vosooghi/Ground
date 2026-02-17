@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Ground.Endpoints.WebApi.Extentions.ModelBinding
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class NonValidatingValidatorExtensions
     {
         public static IServiceCollection AddNonValidatingValidator(this IServiceCollection services)
