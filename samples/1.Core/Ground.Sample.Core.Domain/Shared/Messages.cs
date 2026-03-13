@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ground.Samples.Core.Domain.Shared
+﻿namespace Ground.Samples.Core.Domain.Shared
 {
     public class Messages
     {

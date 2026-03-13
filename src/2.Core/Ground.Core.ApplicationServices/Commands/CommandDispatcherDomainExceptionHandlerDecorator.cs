@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 using Ground.Extensions.Translations.Abstractions;
 using Ground.Core.RequestResponse.Commands;
 using Ground.Core.RequestResponse.Common;
+using Ground.Core.Contracts.ApplicationServices.Commands;
 
 namespace Ground.Core.ApplicationServices.Commands
 {
     /// <summary>
-    /// this class receives Validated command.
-    /// Level 2
+    /// Defines a command dispatcher decorator that handles domain exceptions that may occur during the processing of commands.
     /// </summary>
     public class CommandDispatcherDomainExceptionHandlerDecorator : CommandDispatcherDecorator
     {
@@ -20,13 +20,8 @@ namespace Ground.Core.ApplicationServices.Commands
         #endregion
 
         #region Constructors
-        //public CommandDispatcherDomainExceptionHandlerDecorator(IServiceProvider serviceProvider,
-        //                                                        ILogger<CommandDispatcherDomainExceptionHandlerDecorator> logger)
-        //{
-        //    _serviceProvider = serviceProvider;
-        //    _logger = logger;
-        //}
-        public CommandDispatcherDomainExceptionHandlerDecorator(CommandDispatcher commandDispatcher, IServiceProvider serviceProvider, ILogger<CommandDispatcherDomainExceptionHandlerDecorator> logger) : base(commandDispatcher)
+
+        public CommandDispatcherDomainExceptionHandlerDecorator(ICommandDispatcher commandDispatcher, IServiceProvider serviceProvider, ILogger<CommandDispatcherDomainExceptionHandlerDecorator> logger) : base(commandDispatcher)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
@@ -61,7 +56,7 @@ namespace Ground.Core.ApplicationServices.Commands
                     _logger.LogError(GroundEventId.DomainValidationException, domainStateException, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
                     return DomainExceptionHandlingWithoutReturnValue<TCommand>(domainStateException);
                 }
-                throw ex;
+                throw;
             }
 
         }
@@ -86,7 +81,7 @@ namespace Ground.Core.ApplicationServices.Commands
                     _logger.LogError(GroundEventId.DomainValidationException, ex, "Processing of {CommandType} With value {Command} failed at {StartDateTime} because there are domain exceptions.", command.GetType(), command, DateTime.Now);
                     return DomainExceptionHandlingWithReturnValue<TCommand, TData>(domainStateException);
                 }
-                throw ex;
+                throw;
             }
         }
         #endregion

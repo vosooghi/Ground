@@ -6,7 +6,9 @@ using System.Diagnostics;
 
 namespace Ground.Core.ApplicationServices.Events
 {
-
+    /// <summary>
+    /// Provides an implementation of the IEventDispatcher interface, responsible for routing domain events to their appropriate handlers.
+    /// </summary>
     public class EventDispatcher : IEventDispatcher
     {
         #region Fields

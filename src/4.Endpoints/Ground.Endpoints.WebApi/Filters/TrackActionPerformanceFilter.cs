@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Ground.Endpoints.WebApi.Filters
 {
-
+    /// <summary>
+    /// Measures and logs the execution time of a controller action and enriches logs with scopes.
+    /// </summary>
     public partial class TrackActionPerformanceFilter : IActionFilter
     {
         private Stopwatch _timer;

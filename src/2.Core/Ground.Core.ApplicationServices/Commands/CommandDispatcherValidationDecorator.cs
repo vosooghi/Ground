@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Ground.Core.Contracts.ApplicationServices.Commands;
 using Ground.Core.RequestResponse.Commands;
 using Ground.Core.RequestResponse.Common;
 using Ground.Utilities.Extensions;
@@ -8,8 +9,7 @@ using Microsoft.Extensions.Logging;
 namespace Ground.Core.ApplicationServices.Commands
 {
     /// <summary>
-    /// This is a dispatcher. Level 1
-    /// at first, it validates the command.
+    /// Defines a command dispatcher decorator that validates commands before they are dispatched.
     /// </summary>
     public class CommandDispatcherValidationDecorator : CommandDispatcherDecorator
     {
@@ -19,13 +19,7 @@ namespace Ground.Core.ApplicationServices.Commands
         #endregion
 
         #region Constructors
-        //public CommandDispatcherValidationDecorator(IServiceProvider serviceProvider,
-        //                                            ILogger<CommandDispatcherValidationDecorator> logger)
-        //{
-        //    _serviceProvider = serviceProvider;
-        //    _logger = logger;
-        //}
-        public CommandDispatcherValidationDecorator(CommandDispatcherDomainExceptionHandlerDecorator commandDispatcher,
+        public CommandDispatcherValidationDecorator(ICommandDispatcher commandDispatcher,
                                                IServiceProvider serviceProvider, ILogger<CommandDispatcherValidationDecorator> logger)
                                                : base(commandDispatcher)
         {

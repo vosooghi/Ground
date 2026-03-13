@@ -16,7 +16,7 @@ namespace Ground.Core.Domain.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                throw new InvalidValueObjectStateException("ValidationErrorIsRequire", nameof(BusinessId));
+                throw new InvalidValueObjectStateException("ValidationErrorIsRequired", nameof(BusinessId));
             }
             if (Guid.TryParse(value, out Guid tempValue))
             {

@@ -1,7 +1,7 @@
 ﻿using Ground.Endpoints.WebApi.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
-namespace Ground.Endpoints.WebApi.Extentions.ModelBinding
+namespace Ground.Endpoints.WebApi.Extensions.ModelBinding
 {
     /// <summary>
     /// 

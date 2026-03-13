@@ -28,6 +28,12 @@ namespace Ground.Infra.Data.Sql.Commands
         {
         }
 
+        /// <summary>
+        /// When true, the DbContext populates audit shadow properties inside <see cref="SaveChanges"/> / <see cref="SaveChangesAsync(bool, CancellationToken)"/>.
+        /// Disable this when audit is handled by an EF Core interceptor (e.g., <c>AddAuditDataInterceptor</c>) to avoid double execution.
+        /// </summary>
+        protected virtual bool UseAuditingSaveChangesHook => true;
+
         public void BeginTransaction()
         {
             _transaction = Database.BeginTransaction();
@@ -79,19 +85,27 @@ namespace Ground.Infra.Data.Sql.Commands
         public override int SaveChanges()
         {
             ChangeTracker.DetectChanges();
-            BeforeSaveTriggers();
+
+            if (UseAuditingSaveChangesHook)
+            {
+                BeforeSaveTriggers();
+            }
+
             ChangeTracker.AutoDetectChangesEnabled = false;
             var result = base.SaveChanges();
             ChangeTracker.AutoDetectChangesEnabled = true;
             return result;
         }
 
-        public override Task<int> SaveChangesAsync(
-            bool acceptAllChangesOnSuccess,
-            CancellationToken cancellationToken = default)
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
             ChangeTracker.DetectChanges();
-            BeforeSaveTriggers();
+            
+            if (UseAuditingSaveChangesHook)
+            {
+                BeforeSaveTriggers();
+            }
+
             ChangeTracker.AutoDetectChangesEnabled = false;
             var result = base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
             ChangeTracker.AutoDetectChangesEnabled = true;

@@ -5,10 +5,16 @@ using Ground.Core.Contracts.ApplicationServices.Events;
 using Ground.Core.Contracts.ApplicationServices.Queries;
 using System.Reflection;
 
-namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
+namespace Ground.Endpoints.WebApi.Extensions.DependencyInjection
 {
-    public static class AddApplicationServicesExtentions
+    public static class AddApplicationServicesExtensions
     {
+        /// <summary>
+        /// Add ground services to the DI container. This includes command handlers, query handlers, event handlers, and fluent validators.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="assembliesForSearch"></param>
+        /// <returns></returns>
         public static IServiceCollection AddGroundApplicationServices(
             this IServiceCollection services,
             IEnumerable<Assembly> assembliesForSearch) =>
@@ -25,10 +31,11 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
 
         private static IServiceCollection AddCommandDispatcherDecorators(this IServiceCollection services)
         {
-            services.AddTransient<CommandDispatcher, CommandDispatcher>();
-            services.AddTransient<CommandDispatcherDomainExceptionHandlerDecorator, CommandDispatcherDomainExceptionHandlerDecorator>();
-            services.AddTransient<CommandDispatcherValidationDecorator, CommandDispatcherValidationDecorator>();
-            services.AddTransient<ICommandDispatcher, CommandDispatcherValidationDecorator>();
+            services.AddTransient<ICommandDispatcher, CommandDispatcher>();
+
+            services.Decorate<ICommandDispatcher, CommandDispatcherDomainExceptionHandlerDecorator>();
+            services.Decorate<ICommandDispatcher, CommandDispatcherValidationDecorator>();
+
             return services;
         }
 

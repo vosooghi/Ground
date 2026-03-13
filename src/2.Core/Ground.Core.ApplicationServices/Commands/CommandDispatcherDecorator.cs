@@ -1,15 +1,10 @@
 ﻿using Ground.Core.Contracts.ApplicationServices.Commands;
 using Ground.Core.RequestResponse.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Core.ApplicationServices.Commands
 {
     /// <summary>
-    /// 
+    /// Defines an abstract base class for decorating command dispatchers, allowing additional behavior to be added to the command dispatching process.
     /// </summary>
     public abstract class CommandDispatcherDecorator : ICommandDispatcher
     {

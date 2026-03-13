@@ -1,9 +1,10 @@
-﻿using Ground.Endpoints.WebApi.Extentions.DependencyInjection;
+﻿using Ground.Endpoints.WebApi.Extensions.DependencyInjection;
+using Ground.Endpoints.WebApi.Extensions.ModelBinding;
+using Ground.Extensions.DependencyInjection;
+using Ground.Infra.Data.Sql.Commands.Interceptors;
 using Ground.Samples.Infra.Data.Sql.Commands.Common;
 using Ground.Samples.Infra.Data.Sql.Queries.Common;
 using Microsoft.EntityFrameworkCore;
-using Ground.Extensions.DependencyInjection;
-using Ground.Endpoints.WebApi.Extentions.ModelBinding;
 
 namespace Ground.Samples.Endpoints.WebApi
 {
@@ -30,7 +31,8 @@ namespace Ground.Samples.Endpoints.WebApi
                 c.ReloadDataIntervalInMinuts = 1;
             });
 
-            builder.Services.AddGroundWebUserInfoService(builder.Configuration,true);//fake version
+            // Required for auditing (provides UserIdOrDefault(), IP, agent, etc.). True = Fake user info.
+            builder.Services.AddGroundWebUserInfoService(builder.Configuration,true);
 
             builder.Services.AddGroundAutoMapperProfiles(option =>
             {
@@ -41,8 +43,15 @@ namespace Ground.Samples.Endpoints.WebApi
 
             builder.Services.AddGroundInMemoryCaching();
 
-            builder.Services.AddDbContext<SampleCommandDbContext>(c => c.UseSqlServer(conn));
-            
+            // Recommended approach: Interceptor-based auditing
+            builder.Services.AddScoped<AddAuditDataInterceptor>();
+            // 2) Attach interceptor to DbContext options via AddInterceptors
+            builder.Services.AddDbContext<SampleCommandDbContext>((sp, options) =>
+            {
+                options.UseSqlServer(conn);
+                options.AddInterceptors(sp.GetRequiredService<AddAuditDataInterceptor>());
+            });
+
             builder.Services.AddDbContext<SampleQueryDbContext>(c => c.UseSqlServer(conn));
 
             builder.Services.AddGroundApiCore("Ground");
@@ -58,7 +67,7 @@ namespace Ground.Samples.Endpoints.WebApi
 
         public static WebApplication ConfigurePipeline(this WebApplication app)
         {
-            app.UseGroundApiExceptionHandler();//missing
+            app.UseGroundApiExceptionHandler();
             
             //app.UseSerilogRequestLogging();
 

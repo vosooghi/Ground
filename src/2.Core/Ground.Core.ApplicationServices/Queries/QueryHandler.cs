@@ -5,7 +5,11 @@ using Ground.Utilities;
 
 namespace Ground.Core.ApplicationServices.Queries
 {
-
+    /// <summary>
+    /// Provides an abstract base class for handling queries, providing common functionality for processing queries and generating results.
+    /// </summary>
+    /// <typeparam name="TQuery">The type of the query.</typeparam>
+    /// <typeparam name="TData">The type of the data returned by the query.</typeparam>
     public abstract class QueryHandler<TQuery, TData> : IQueryHandler<TQuery, TData>
         where TQuery : class, IQuery<TData>
     {

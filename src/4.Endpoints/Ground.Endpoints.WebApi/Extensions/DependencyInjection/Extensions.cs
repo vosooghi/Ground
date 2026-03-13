@@ -3,10 +3,9 @@ using System.Reflection;
 using Ground.Extensions.DependencyInjection.Abstractions;
 
 
-namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
+namespace Ground.Endpoints.WebApi.Extensions.DependencyInjection
 {
-
-    public static class Extentions
+    public static class Extensions
     {
         /// <summary>
         /// Add Ground dependencies, including application services, data access, utility services and custom dependencies
@@ -19,7 +18,7 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
         {
 
             var assemblies = GetAssemblies(assemblyNamesForSearch);
-            services.AddGroundApplicationServices(assemblies).AddGroundDataAccess(assemblies).AddGroundUntilityServices().AddCustomeDepenecies(assemblies);
+            services.AddGroundApplicationServices(assemblies).AddGroundDataAccess(assemblies).AddGroundUtilityServices().AddCustomDependencies(assemblies);
             return services;
         }
         /// <summary>
@@ -29,7 +28,7 @@ namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
         /// <param name="services"></param>
         /// <param name="assemblies"></param>
         /// <returns></returns>
-        public static IServiceCollection AddCustomeDepenecies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+        public static IServiceCollection AddCustomDependencies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
         {
             return services.AddWithTransientLifetime(assemblies, typeof(ITransientLifetime))
                 .AddWithScopedLifetime(assemblies, typeof(IScopeLifetime))

@@ -3,12 +3,12 @@
 namespace Ground.Core.Contracts.ApplicationServices.Commands
 {
     /// <summary>
-    /// Mediator pattern to manage commands structure.
+    /// Defines the contract for dispatching commands to their appropriate handlers. 
     /// </summary>
     public interface ICommandDispatcher
     {
         /// <summary>
-        /// get a command as Icommand and find appropraite command for executing.
+        /// Dispatch a command as Icommand and find appropraite command for executing.
         /// </summary>
         /// <typeparam name="TCommand">command type</typeparam>
         /// <param name="command">command name</param>
@@ -16,7 +16,7 @@ namespace Ground.Core.Contracts.ApplicationServices.Commands
         Task<CommandResult> Send<TCommand>(TCommand command) where TCommand : class, ICommand;
 
         /// <summary>
-        /// get a command as Icommand and find appropraite command for executing. it has return value.
+        /// Dispatch a command as Icommand and find appropraite command for executing.
         /// </summary>
         /// <typeparam name="TCommand">command type</typeparam>
         /// <typeparam name="TData">return type</typeparam>

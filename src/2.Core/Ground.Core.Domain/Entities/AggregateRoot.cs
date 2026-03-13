@@ -40,18 +40,21 @@ namespace Ground.Core.Domain.Entities
             AddEvent(@event);
         }
 
+        /// <summary>
+        /// Applies the event to the aggregate by calling the corresponding "On" method using reflection.
+        /// </summary>
+        /// <param name="event">The domain event to apply.</param>
         private void Mutate(IDomainEvent @event)
         {
             //using Reflection to call private methods
-            var onMethod = this.GetType().GetMethod("On", BindingFlags.Instance | BindingFlags.NonPublic,new Type[] { @event.GetType()});// [@event.GetType()] C#12
-            onMethod.Invoke(this, new[] { @event });
+            var onMethod = this.GetType().GetMethod("On", BindingFlags.Instance | BindingFlags.NonPublic, [@event.GetType()]);
+            onMethod?.Invoke(this, new[] { @event });
         }
 
         /// <summary>
-        /// Add new event to the aggregate
-        /// It should be protected or private.
+        /// Add new event to the aggregate        
         /// </summary>
-        /// <param name="event"></param>
+        /// <param name="event">The domain event to add.</param>
         protected void AddEvent(IDomainEvent @event) => _events.Add(@event);
 
         /// <summary>

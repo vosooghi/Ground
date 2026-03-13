@@ -7,9 +7,14 @@
     public abstract class BaseValueObject<TValueObject> : IEquatable<TValueObject>
             where TValueObject : BaseValueObject<TValueObject>
     {
-        public bool Equals(TValueObject other) => this == other;
+        public bool Equals(TValueObject? other)
+        {
+            if (other is null)
+                return false;
+            return this == other;
+        }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is TValueObject otherObject)
             {

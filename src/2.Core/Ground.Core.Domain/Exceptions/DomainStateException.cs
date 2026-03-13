@@ -1,12 +1,13 @@
 ﻿namespace Ground.Core.Domain.Exceptions
 {
     /// <summary>
-    /// Provides a base class for exceptions that occur due to invalid state in the domain layer.
+    /// Represents errors that occur when the state of a domain entity or value object is invalid.
+    /// This exception is thrown when the state of a domain entity or value object does not meet certain criteria or violates business rules.
     /// </summary>
     public class DomainStateException : Exception
     {
         /// <summary>
-        /// the paramters to be sent as exception message.
+        /// The parameters to be sent as exception message.
         /// </summary>
         public string[] Parameters { get; set; }
 
@@ -18,8 +19,8 @@
         public DomainStateException(string message, params string[] parameters) : base(message)
         {
             Parameters = parameters;
-
         }
+
         /// <summary>
         /// If there is some parameters, it returns message as a patterns, else returns Message.
         /// </summary>

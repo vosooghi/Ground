@@ -2,18 +2,14 @@
 using Ground.Utilities.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ground.Extensions.Logger.Abstractions;
 using Ground.Core.RequestResponse.Queries;
 
 namespace Ground.Core.ApplicationServices.Queries
 {
-
+    /// <summary>
+    /// Provides an implementation of the IQueryDispatcher interface, responsible for routing queries to their appropriate handlers.
+    /// </summary>
     public class QueryDispatcher : IQueryDispatcher
     {
         #region Fields

@@ -22,8 +22,7 @@ namespace Ground.Core.Domain.Entities
 
         /// <summary>
         /// Business Id for the entity.
-        /// The entity is identified by this BusinessId.
-        /// All relations are implemented by BusinessId.
+        /// The entity is identified by BusinessId, and all relations are implemented by BusinessId.
         /// </summary>
         public BusinessId BusinessId { get; protected set; } = BusinessId.FromGuid(Guid.NewGuid());
 
@@ -35,7 +34,7 @@ namespace Ground.Core.Domain.Entities
 
 
         #region Equality Check
-        public bool Equals(Entity<TId>? other) => this == other;
+        public bool Equals(Entity<TId>? other) => other is not null && this == other;
         public override bool Equals(object? obj) =>
              obj is Entity<TId> otherObject && Id.Equals(otherObject.Id);
 
@@ -57,6 +56,9 @@ namespace Ground.Core.Domain.Entities
         #endregion
     }
 
+    /// <summary>
+    /// Represents the base class for an entity in the domain model with long Id.
+    /// </summary>
     public abstract class Entity : Entity<long>
     {
 

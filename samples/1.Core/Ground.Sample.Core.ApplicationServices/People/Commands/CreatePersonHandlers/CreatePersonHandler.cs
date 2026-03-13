@@ -7,7 +7,7 @@ using Ground.Utilities;
 
 namespace Ground.Samples.Core.ApplicationServices.People.Commands.CreatePersonHandlers
 {
-    internal class CreatePersonHandler : CommandHandler<CreatePerson, long>
+    public class CreatePersonHandler : CommandHandler<CreatePerson, long>
     {
         private readonly IPersonCommandRepository _repository;
 

@@ -3,10 +3,10 @@ using Ground.Endpoints.WebApi.Filters;
 using Ground.Endpoints.WebApi.Middlewares.ApiExceptionHandler;
 using Microsoft.Data.SqlClient;
 
-namespace Ground.Endpoints.WebApi.Extentions.DependencyInjection
+namespace Ground.Endpoints.WebApi.Extensions.DependencyInjection
 {
      
-    public static class AddApiConfigurationExtentions
+    public static class AddApiConfigurationExtensions
     {
         /// <summary>
         /// Add Controllers support
