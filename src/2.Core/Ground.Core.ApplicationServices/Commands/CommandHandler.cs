@@ -5,7 +5,11 @@ using Ground.Utilities;
 
 namespace Ground.Core.ApplicationServices.Commands
 {
-
+    /// <summary>
+    /// Defines an abstract base class for handling commands, providing common functionality for processing commands and generating results.
+    /// </summary>
+    /// <typeparam name="TCommand">The type of the command.</typeparam>
+    /// <typeparam name="TData">The type of the data returned by the command.</typeparam>
     public abstract class CommandHandler<TCommand, TData> : ICommandHandler<TCommand, TData>
         where TCommand : ICommand<TData>
     {
@@ -54,6 +58,10 @@ namespace Ground.Core.ApplicationServices.Commands
         }
     }
 
+    /// <summary>
+    /// Defines an abstract base class for handling commands that do not return data, providing common functionality for processing commands and generating results.
+    /// </summary>
+    /// <typeparam name="TCommand">The type of the command.</typeparam>
     public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand>
     where TCommand : ICommand
     {

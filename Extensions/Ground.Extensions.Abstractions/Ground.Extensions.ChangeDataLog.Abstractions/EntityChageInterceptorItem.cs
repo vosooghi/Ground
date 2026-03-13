@@ -1,6 +1,9 @@
 ﻿namespace Ground.Extensions.ChangeDataLog.Abstractions
 {
-    public class EntityChageInterceptorItem
+    /// <summary>
+    /// Represents a change interceptor item for changes made to an entity for auditing purposes.
+    /// </summary>
+    public class EntityChangeInterceptorItem
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string ContextName { get; set; }
@@ -11,13 +14,13 @@
         public string TransactionId { get; set; }
         public DateTime DateOfOccurrence { get; set; }
         public string ChangeType { get; set; }
-
+        
         public List<PropertyChangeLogItem> PropertyChangeLogItems { get; set; } = new List<PropertyChangeLogItem>();
         public void AddPropertyChangeItem(string propertyName, string value)
         {
             PropertyChangeLogItems.Add(new PropertyChangeLogItem
             {
-                ChageInterceptorItemId = Id,
+                ChangeInterceptorItemId = Id,
                 PropertyName = propertyName,
                 Value = value
             });

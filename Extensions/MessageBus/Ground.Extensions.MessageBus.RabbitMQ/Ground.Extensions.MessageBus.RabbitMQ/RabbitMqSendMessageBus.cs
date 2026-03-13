@@ -8,6 +8,9 @@ using System.Diagnostics;
 
 namespace Ground.Extensions.MessageBus.RabbitMQ
 {
+    /// <summary>
+    /// Provides functionality to send messages to RabbitMQ. It allows you to publish events and send commands to specific services. The class manages the connection and channel to RabbitMQ, ensuring that messages are sent reliably. It also integrates with logging and supports activity tracing for better observability.
+    /// </summary>
     public class RabbitMqSendMessageBus : IDisposable, ISendMessageBus
     {
         #region Fields And Properties
@@ -31,7 +34,7 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
         #endregion
 
         #region Public methods
-        public void Publish<TInput>(TInput input)
+        public async Task Publish<TInput>(TInput input)
         {
             if (input == null)
                 throw new ArgumentNullException(nameof(input));
@@ -48,9 +51,9 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
                     ["AccuredOn"] = DateTime.Now.ToString(),
                 }
             };
-            Send(parcel);
+            await Send(parcel);
         }
-        public void SendCommandTo<TCommandData>(string destinationService, string commandName, TCommandData commandData)
+        public async Task SendCommandTo<TCommandData>(string destinationService, string commandName, TCommandData commandData)
         {
             if (commandData == null)
                 throw new ArgumentNullException(nameof(commandData));
@@ -61,9 +64,9 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
                 MessageName = commandName,
                 Route = $"{destinationService}.{RabbitMqSendMessageBusConstants.command}.{commandName}"
             };
-            Send(parcel);
+            await Send(parcel);
         }
-        public void SendCommandTo<TCommandData>(string destinationService, string commandName, string correlationId, TCommandData commandData)
+        public async Task SendCommandTo<TCommandData>(string destinationService, string commandName, string correlationId, TCommandData commandData)
         {
             if (commandData == null)
                 throw new ArgumentNullException(nameof(commandData));
@@ -75,9 +78,9 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
                 MessageName = commandName,
                 Route = $"{destinationService}.{RabbitMqSendMessageBusConstants.command}.{commandName}"
             };
-            Send(parcel);
+            await Send(parcel);
         }
-        public void Send(Parcel parcel)
+        public async Task Send(Parcel parcel)
         {
             if (parcel is null)
                 throw new ArgumentNullException(nameof(parcel));
@@ -86,7 +89,7 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
 
             var basicProperties = _channel.CreateBasicProperties();
 
-            basicProperties.Persistent = _rabbitMqOptions.PerssistMessage;
+            basicProperties.Persistent = _rabbitMqOptions.PersistMessage;
             basicProperties.AppId = _rabbitMqOptions.ServiceName;
             basicProperties.CorrelationId = parcel?.CorrelationId;
             basicProperties.MessageId = parcel?.MessageId;

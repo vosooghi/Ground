@@ -1,22 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
-  <ItemGroup>    
-    <PackageReference Include="Ground.Core.Domain" Version="2.0.0" />
-    <PackageReference Include="Ground.Extensions.MessageBus.RabbitMQ" Version="1.0.0" />
-    <PackageReference Include="Ground.Extensions.Serializers.NewtonSoft" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper\Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper.csproj" />
-    <ProjectReference Include="..\Ground.Extensions.MessageBus.MessageInbox\Ground.Extensions.MessageBus.MessageInbox.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\src\2.Core\Ground.Core.Domain\Ground.Core.Domain.csproj" />
+		<ProjectReference Include="..\..\..\Serializers\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj" />
+		<ProjectReference Include="..\..\Ground.Extensions.MessageBus.RabbitMQ\Ground.Extensions.MessageBus.RabbitMQ\Ground.Extensions.MessageBus.RabbitMQ.csproj" />
+		<ProjectReference Include="..\Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper\Ground.Extensions.MessageBus.MessageInbox.Dal.Dapper.csproj" />
+		<ProjectReference Include="..\Ground.Extensions.MessageBus.MessageInbox\Ground.Extensions.MessageBus.MessageInbox.csproj" />
+	</ItemGroup>
 
 </Project>

@@ -1,47 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-	  <TargetFramework>net9.0</TargetFramework>
-	  <ImplicitUsings>enable</ImplicitUsings>
-	  <Nullable>enable</Nullable>
-	  <Title>$(AssemblyName)</Title>
-	  <PackageReadmeFile>readme.md</PackageReadmeFile>
-	  <PackageTags>$(AssemblyName)</PackageTags>
-	  <Authors>Abbas Vosoughi</Authors>
-	  <Description>$(AssemblyName)</Description>
-	  <PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
-	  <RepositoryType>git</RepositoryType>
-	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-	  <Version>3.0.0</Version>
-	  <PackageIcon>Icon.png</PackageIcon>
-	  <PackageReleaseNotes>.Net 9</PackageReleaseNotes>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
-    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.11.2" />
-    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.2" />
-    <PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.6.0-rc.1" />
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.1" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.10" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.1" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.1" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.7.0-beta.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="Icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>true</IsPackable>
+		<Description>OpenTelemetry registration utilities for Ground project</Description>
+		<PackageTags>Ground.Utilities.OpenTelemetryRegistration</PackageTags>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
+		<PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.11.2" />
+		<PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.11.2" />
+		<PackageReference Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.6.0-rc.1" />
+		<PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.11.2" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.10" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.11.1" />
+		<PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.7.0-beta.1" />
+	</ItemGroup>
+
 
 </Project>

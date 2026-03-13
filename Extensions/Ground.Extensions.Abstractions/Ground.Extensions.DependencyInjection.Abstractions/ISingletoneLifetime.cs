@@ -1,6 +1,9 @@
 ﻿namespace Ground.Extensions.DependencyInjection.Abstractions
 {
-    public interface ISingletoneLifetime
+    /// <summary>
+    /// a marker interface for services that should have a singleton lifetime.
+    /// </summary>
+    public interface ISingletonLifetime
     {
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ground.Utilities.Extensions
+﻿namespace Ground.Utilities.Extensions
 {
     /// <summary>
-    /// for categorizing events
+    /// Defines a set of constant integer values that represent unique identifiers for various events and exceptions in the Ground framework.    
     /// </summary>
     public class GroundEventId
     {

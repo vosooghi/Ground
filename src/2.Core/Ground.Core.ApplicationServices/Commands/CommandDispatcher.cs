@@ -8,7 +8,7 @@ using System.Diagnostics;
 namespace Ground.Core.ApplicationServices.Commands
 {
     /// <summary>
-    /// Level 3 Dispatcher
+    /// Provides an implementation of the ICommandDispatcher interface, responsible for routing commands to their appropriate handlers.
     /// </summary>
     public class CommandDispatcher : ICommandDispatcher
     {

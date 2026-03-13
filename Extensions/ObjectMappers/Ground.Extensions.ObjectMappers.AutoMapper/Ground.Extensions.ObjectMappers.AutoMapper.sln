@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ground.Extensions.ObjectMap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.ObjectMappers.AutoMapper.S", "Ground.Extensions.ObjectMappers.AutoMapper.S\Ground.Extensions.ObjectMappers.AutoMapper.S.csproj", "{823DD307-4B3C-44F1-8498-B7BE49FB5A9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.ObjectMappers.Abstractions", "..\..\Ground.Extensions.Abstractions\Ground.Extensions.ObjectMappers.Abstractions\Ground.Extensions.ObjectMappers.Abstractions.csproj", "{15860391-2D9B-CFB8-AF5B-D5EE3B3D6153}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{823DD307-4B3C-44F1-8498-B7BE49FB5A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823DD307-4B3C-44F1-8498-B7BE49FB5A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823DD307-4B3C-44F1-8498-B7BE49FB5A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15860391-2D9B-CFB8-AF5B-D5EE3B3D6153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15860391-2D9B-CFB8-AF5B-D5EE3B3D6153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15860391-2D9B-CFB8-AF5B-D5EE3B3D6153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15860391-2D9B-CFB8-AF5B-D5EE3B3D6153}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

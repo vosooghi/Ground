@@ -12,15 +12,23 @@ using Ground.Core.RequestResponse.Queries;
 
 namespace Ground.Endpoints.WebApi.Controllers
 {
-
+    /// <summary>
+    /// Represents the base controller for all API controllers in the application. 
+    /// It provides common functionality for handling commands, queries, and events, as well as accessing the Ground application context. 
+    /// </summary>
     public class BaseController : Controller
-    {
+    {        
         protected ICommandDispatcher CommandDispatcher => HttpContext.CommandDispatcher();
         protected IQueryDispatcher QueryDispatcher => HttpContext.QueryDispatcher();
         protected IEventDispatcher EventDispatcher => HttpContext.EventDispatcher();
         protected GroundServices GroundApplicationContext => HttpContext.GroundApplicationContext();
 
-        //to create Excel result
+        /// <summary>
+        /// Generates an Excel file from a list of data and returns it as a downloadable file response.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <returns>Returns a file result containing the Excel file.</returns>
         public IActionResult Excel<T>(List<T> list)
         {
             var serializer = (IExcelSerializer)HttpContext.RequestServices.GetRequiredService(typeof(IExcelSerializer));
@@ -34,7 +42,13 @@ namespace Ground.Endpoints.WebApi.Controllers
             return File(bytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{fileName}.xlsx");
         }
 
-
+        /// <summary>
+        /// Receives a command, sends it to the command dispatcher, and returns an appropriate HTTP response based on the result of the command execution.
+        /// </summary>
+        /// <typeparam name="TCommand">The type of the command.</typeparam>
+        /// <typeparam name="TCommandResult">The type of the command result.</typeparam>
+        /// <param name="command">The command to be executed.</param>
+        /// <returns>An IActionResult representing the result of the command execution.</returns>
         protected async Task<IActionResult> Create<TCommand, TCommandResult>(TCommand command) where TCommand : class, ICommand<TCommandResult>
         {
             var result = await CommandDispatcher.Send<TCommand, TCommandResult>(command);

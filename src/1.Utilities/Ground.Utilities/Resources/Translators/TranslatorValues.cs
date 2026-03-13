@@ -1,7 +1,7 @@
 ﻿namespace Ground.Utilities.Resources.Translators
 {
     /// <summary>
-    /// Common Keys and Values for seeding translators
+    /// This class contains constant string values used for translation in the application.
     /// </summary>
     public class TranslatorValues
     {

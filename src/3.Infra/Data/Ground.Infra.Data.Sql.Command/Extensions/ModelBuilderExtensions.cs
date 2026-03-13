@@ -2,15 +2,12 @@
 using Ground.Core.Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Infra.Data.Sql.Commands.Extensions
 {
-
+    /// <summary>
+    /// An extension class for the ModelBuilder to provide methods for adding a BusinessId property to entities that inherit from AggregateRoot or Entity, and for applying value converters to properties of a specific type.
+    /// </summary>
     public static class ModelBuilderExtensions
     {
         public static void AddBusinessId(this ModelBuilder modelBuilder)

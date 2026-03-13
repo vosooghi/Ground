@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ground.Core.Domain.Entities
+﻿namespace Ground.Core.Domain.Entities
 {
+    /// <summary>
+    /// Provides an interface for entities that require auditing information.
+    /// </summary>
     public interface IAuditableEntity
     {
     }

@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.MessageBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.MessageBus.RabbitMQ.Sample", "Ground.Extensions.MessageBus.RabbitMQ.Sample\Ground.Extensions.MessageBus.RabbitMQ.Sample.csproj", "{567DB468-12B8-47DB-839A-6A777147C872}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.MessageBus.Abstractions", "..\..\Ground.Extensions.Abstractions\Ground.Extensions.MessageBus.Abstractions\Ground.Extensions.MessageBus.Abstractions.csproj", "{8B613880-6C60-CBC3-CD06-C91D3B320698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Serializers.Abstractions", "..\..\Ground.Extensions.Abstractions\Ground.Extensions.Serializers.Abstractions\Ground.Extensions.Serializers.Abstractions.csproj", "{D1532808-4FAB-E891-13F9-AD9623991CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Utilities", "..\..\..\src\1.Utilities\Ground.Utilities\Ground.Utilities.csproj", "{30231BEB-2A6C-F33D-718A-6B8940668298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.Serializers.NewtonSoft", "..\..\Serializers\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft\Ground.Extensions.Serializers.NewtonSoft.csproj", "{7EE039DA-8ACD-61B1-49D1-AC1D3A6AC621}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +29,22 @@ Global
 		{567DB468-12B8-47DB-839A-6A777147C872}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{567DB468-12B8-47DB-839A-6A777147C872}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{567DB468-12B8-47DB-839A-6A777147C872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B613880-6C60-CBC3-CD06-C91D3B320698}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B613880-6C60-CBC3-CD06-C91D3B320698}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B613880-6C60-CBC3-CD06-C91D3B320698}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B613880-6C60-CBC3-CD06-C91D3B320698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1532808-4FAB-E891-13F9-AD9623991CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1532808-4FAB-E891-13F9-AD9623991CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1532808-4FAB-E891-13F9-AD9623991CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1532808-4FAB-E891-13F9-AD9623991CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30231BEB-2A6C-F33D-718A-6B8940668298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30231BEB-2A6C-F33D-718A-6B8940668298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30231BEB-2A6C-F33D-718A-6B8940668298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30231BEB-2A6C-F33D-718A-6B8940668298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE039DA-8ACD-61B1-49D1-AC1D3A6AC621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE039DA-8ACD-61B1-49D1-AC1D3A6AC621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE039DA-8ACD-61B1-49D1-AC1D3A6AC621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE039DA-8ACD-61B1-49D1-AC1D3A6AC621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,19 @@
+<Project>
+	<PropertyGroup>
+		<Authors>Abbas Vosoughi</Authors>
+		<Title>$(AssemblyName)</Title>
+		<PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageIcon>Icon.png</PackageIcon>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PackageReadmeFile>README.md</PackageReadmeFile>		
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(MSBuildThisFileDirectory)Icon.png" Pack="true" PackagePath="" />
+		<None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+</Project>

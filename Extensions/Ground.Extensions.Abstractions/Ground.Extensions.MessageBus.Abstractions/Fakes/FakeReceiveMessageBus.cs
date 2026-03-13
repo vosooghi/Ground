@@ -1,24 +1,22 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿
 namespace Ground.Extensions.MessageBus.Abstractions.Fakes
 {
+    /// <summary>
+    /// Provides a mock implementation of the message bus for receiving messages and subscribing to events.
+    /// Intended for use in scenarios where actual message bus functionality is not required, such as unit testing or
+    /// development environments.
+    /// </summary>
     public class FakeReceiveMessageBus : IReceiveMessageBus
-    {
-        private readonly ILogger<FakeSendMessageBus> _logger;
-
-        public FakeReceiveMessageBus(ILogger<FakeSendMessageBus> logger)
+    {                
+        public Task Receive(string commandName)
         {
-            _logger = logger;
+            return Task.CompletedTask;
         }
 
-        public void Receive(string commandName)
+        public Task Subscribe(string serviceId, string eventName)
         {
-            _logger.LogInformation("fake message bus receive {commandName}", commandName);
+            return Task.CompletedTask;
         }
-
-        public void Subscribe(string serviceId, string eventName)
-        {
-            _logger.LogInformation("fake message bus subscribe for event: {eventName} from service {serviceId}", eventName, serviceId);
-        }
+        
     }
 }

@@ -12,7 +12,9 @@ using Ground.Extensions.UsersManagement.Abstractions;
 
 namespace Ground.Infra.Data.Sql.Commands
 {
-
+    /// <summary>
+    /// Represents the base class for command DbContext.
+    /// </summary>
     public abstract class BaseCommandDbContext : DbContext
     {
         protected IDbContextTransaction _transaction;
@@ -25,6 +27,12 @@ namespace Ground.Infra.Data.Sql.Commands
         protected BaseCommandDbContext()
         {
         }
+
+        /// <summary>
+        /// When true, the DbContext populates audit shadow properties inside <see cref="SaveChanges"/> / <see cref="SaveChangesAsync(bool, CancellationToken)"/>.
+        /// Disable this when audit is handled by an EF Core interceptor (e.g., <c>AddAuditDataInterceptor</c>) to avoid double execution.
+        /// </summary>
+        protected virtual bool UseAuditingSaveChangesHook => true;
 
         public void BeginTransaction()
         {
@@ -72,27 +80,32 @@ namespace Ground.Infra.Data.Sql.Commands
             base.ConfigureConventions(configurationBuilder);
             configurationBuilder.Properties<Description>().HaveConversion<DescriptionConversion>();
             configurationBuilder.Properties<Title>().HaveConversion<TitleConversion>();
-            configurationBuilder.Properties<BusinessId>().HaveConversion<BusinessIdConversion>();
-            configurationBuilder.Properties<LegalNationalId>().HaveConversion<LegalNationalId>();
-            configurationBuilder.Properties<NationalCode>().HaveConversion<NationalCodeConversion>();
-
+            configurationBuilder.Properties<BusinessId>().HaveConversion<BusinessIdConversion>();            
         }
         public override int SaveChanges()
         {
             ChangeTracker.DetectChanges();
-            BeforeSaveTriggers();
+
+            if (UseAuditingSaveChangesHook)
+            {
+                BeforeSaveTriggers();
+            }
+
             ChangeTracker.AutoDetectChangesEnabled = false;
             var result = base.SaveChanges();
             ChangeTracker.AutoDetectChangesEnabled = true;
             return result;
         }
 
-        public override Task<int> SaveChangesAsync(
-            bool acceptAllChangesOnSuccess,
-            CancellationToken cancellationToken = default)
+        public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
             ChangeTracker.DetectChanges();
-            BeforeSaveTriggers();
+            
+            if (UseAuditingSaveChangesHook)
+            {
+                BeforeSaveTriggers();
+            }
+
             ChangeTracker.AutoDetectChangesEnabled = false;
             var result = base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
             ChangeTracker.AutoDetectChangesEnabled = true;

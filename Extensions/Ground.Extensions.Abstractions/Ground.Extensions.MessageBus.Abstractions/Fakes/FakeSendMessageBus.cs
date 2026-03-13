@@ -1,38 +1,36 @@
-﻿using Ground.Extensions.MessageBus.Abstractions;
-using Microsoft.Extensions.Logging;
+﻿
 
 namespace Ground.Extensions.MessageBus.Abstractions.Fakes
 {
+    /// <summary>
+    /// Provides a mock implementation of the message bus for sending and publishing messages without actual
+    /// delivery. Intended for use in unit tests or development scenarios where message transport is simulated.
+    /// </summary>
     public class FakeSendMessageBus : ISendMessageBus
-    {
-        private readonly ILogger<FakeSendMessageBus> _logger;
+    {        
 
-        public FakeSendMessageBus(ILogger<FakeSendMessageBus> logger)
+        public FakeSendMessageBus()
         {
-            _logger = logger;
-        }
-        public void Publish<TInput>(TInput input)
-        {
-            _logger.LogInformation("Message published by fake message bus: {input}", input.ToString());
         }
 
-        public void Send(Parcel parcel)
+        public Task Publish<TInput>(TInput input)
         {
-            _logger.LogInformation("Message send by fake message bus: {parcel}", parcel.ToString());
+            return Task.CompletedTask;
         }
 
-        public void SendCommandTo<TCommandData>(string destinationService, string commandName, TCommandData commandData)
+        public Task Send(Parcel parcel)
         {
-            _logger.LogInformation("command send to {destinationService} by fake message bus. Command name: {commandName} and command data is {commandData}",
-                destinationService, commandName, commandData?.ToString());
+            return Task.CompletedTask;
         }
 
-        public void SendCommandTo<TCommandData>(string destinationService, string commandName, string correlationId, TCommandData commandData)
+        public Task SendCommandTo<TCommandData>(string destinationService, string commandName, TCommandData commandData)
         {
-            _logger.LogInformation("command send to {destinationService} by fake message bus. Command name: {commandName} with correlation id: " +
-                "{correlationId} and command data is {commandData}", destinationService, commandName, correlationId, commandData?.ToString());
+            return Task.CompletedTask;
         }
 
-
+        public Task SendCommandTo<TCommandData>(string destinationService, string commandName, string correlationId, TCommandData commandData)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

@@ -1,14 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\src\3.Infra\Data\Ground.Infra.Data.Sql.Queries\Ground.Infra.Data.Sql.Queries.csproj" />
-    <ProjectReference Include="..\..\..\1.Core\Ground.Sample.Core.Contracts\Ground.Samples.Core.Contracts.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\src\3.Infra\Data\Ground.Infra.Data.Sql.Queries\Ground.Infra.Data.Sql.Queries.csproj" />
+		<ProjectReference Include="..\..\..\1.Core\Ground.Sample.Core.Contracts\Ground.Samples.Core.Contracts.csproj" />
+	</ItemGroup>
 
 </Project>

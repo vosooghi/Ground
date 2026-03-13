@@ -21,7 +21,7 @@ namespace Ground.Extensions.Events.PollingPublisher.Dal.Dapper.DataAccess
             _logger = logger;
             _logger.LogInformation("New Instance of SqlOutBoxEventItemRepository Created");
         }
-        public List<OutBoxEventItem> GetOutBoxEventItemsForPublishe(int maxCount = 100)
+        public List<OutBoxEventItem> GetOutBoxEventItemsForPublish(int maxCount = 100)
         {
             try
             {

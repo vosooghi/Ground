@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ground.Core.Domain.Exceptions
+﻿namespace Ground.Core.Domain.Exceptions
 {
     /// <summary>
-    /// A microtype to identify ValueObject Invalid State Exception.
+    /// The exception related to invalid state of a ValueObject. It is thrown when the state of a ValueObject is invalid.
+    /// Such as when the value of a property is null or empty, or when the value of a property does not meet certain criteria.
     /// </summary>
     public class InvalidValueObjectStateException : DomainStateException
     {
         /// <summary>
-        /// the exceptions related to invalid state of an Entity is thrown by this class.
+        /// Initializes a new instance of the <see cref="InvalidValueObjectStateException"/> class with a specified error message and parameters.
         /// </summary>
         /// <param name="message">String message or Message Pattern</param>
-        /// <param name="parameters">the parameters of message patterns</param>
+        /// <param name="parameters">The parameters of message patterns</param>
         public InvalidValueObjectStateException(string message, params string[] parameters) : base(message, parameters)
         {
         }

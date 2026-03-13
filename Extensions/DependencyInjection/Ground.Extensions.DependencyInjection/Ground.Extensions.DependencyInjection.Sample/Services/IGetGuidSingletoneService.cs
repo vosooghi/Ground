@@ -2,7 +2,7 @@
 
 namespace Ground.Extensions.DependencyInjection.Sample.Services
 {
-    public interface IGetGuidSingletoneService : ISingletoneLifetime
+    public interface IGetGuidSingletoneService : ISingletonLifetime
     {
         Guid Execute();
     }

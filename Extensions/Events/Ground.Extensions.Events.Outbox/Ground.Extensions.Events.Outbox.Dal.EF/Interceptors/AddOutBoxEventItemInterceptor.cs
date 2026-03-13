@@ -9,6 +9,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Ground.Extensions.Events.Outbox.Dal.EF.Interceptors
 {
+    /// <summary>
+    /// Intercepts save operations to automatically add outbox event items for domain events raised by aggregate roots
+    /// during changes in the DbContext.
+    /// </summary>
     public class AddOutBoxEventItemInterceptor : SaveChangesInterceptor
     {
         public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
@@ -24,8 +28,23 @@ namespace Ground.Extensions.Events.Outbox.Dal.EF.Interceptors
             return base.SavingChangesAsync(eventData, result, cancellationToken);
         }
 
+        /// <summary>
+        /// Adds outbox event items to the context for each domain event found in changed aggregate roots within the
+        /// specified DbContext event data.
+        /// </summary>
+        /// <remarks>This method inspects all aggregate root entities tracked by the context that have
+        /// domain events, and creates corresponding outbox event items for each event. The outbox items include user
+        /// information, event metadata, and tracing identifiers if available. This enables reliable event publishing in
+        /// distributed systems by persisting events as part of the current transaction.</remarks>
+        /// <param name="eventData">The event data containing the DbContext and change tracking information.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="eventData.Context"/> is null.</exception>
         private static void AddOutbox(DbContextEventData eventData)
         {
+            if (eventData.Context == null)
+            {
+                throw new ArgumentNullException(nameof(eventData.Context), "DbContext cannot be null.");
+            }
+
             List<dynamic> changedAggregates = eventData.Context.ChangeTracker
                 .Entries<IAggregateRoot>()
                 .Where(x => x.State != EntityState.Detached)

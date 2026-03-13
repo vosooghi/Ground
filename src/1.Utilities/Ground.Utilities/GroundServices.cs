@@ -1,5 +1,4 @@
 ﻿
-
 using Ground.Extensions.Caching.Abstractions;
 using Ground.Extensions.ObjectMappers.Abstractions;
 using Ground.Extensions.Serializers.Abstractions;
@@ -9,7 +8,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Ground.Utilities
 {
-
+    /// <summary>
+    /// Provides a convenient way to access commonly used services such as translation, caching, mapping, logging, serialization, and user information retrieval.
+    /// </summary>
     public class GroundServices
     {
         public readonly ITranslator Translator;

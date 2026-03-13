@@ -1,8 +1,6 @@
 ﻿using Ground.Core.Domain.Entities;
-using Ground.Core.Domain.Exceptions;
 using Ground.Samples.Core.Domain.People.Events;
 using Ground.Samples.Core.Domain.People.ValueObjects;
-using Ground.Samples.Core.Domain.Shared;
 
 namespace Ground.Samples.Core.Domain.People.Entities
 {

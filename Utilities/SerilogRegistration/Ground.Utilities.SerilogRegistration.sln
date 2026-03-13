@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ground.Utilities.SerilogReg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Utilities.SerilogRegistration.Sample", "Ground.Utilities.SerilogRegistration.Sample\Ground.Utilities.SerilogRegistration.Sample.csproj", "{B799EB72-5027-4736-948D-202CFC43424A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.UsersManagement.Abstractions", "..\..\Extensions\Ground.Extensions.Abstractions\Ground.Extensions.UsersManagement.Abstractions\Ground.Extensions.UsersManagement.Abstractions.csproj", "{EB8AF580-1CE9-798A-6DD5-C2FA35FC636A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ground.Extensions.UsersManagement", "..\..\Extensions\UserManagement\Ground.Extensions.UsersManagement\Ground.Extensions.UsersManagement\Ground.Extensions.UsersManagement.csproj", "{051FEDBB-8800-65BC-01E1-E5D3E71B8D48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B799EB72-5027-4736-948D-202CFC43424A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B799EB72-5027-4736-948D-202CFC43424A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B799EB72-5027-4736-948D-202CFC43424A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8AF580-1CE9-798A-6DD5-C2FA35FC636A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8AF580-1CE9-798A-6DD5-C2FA35FC636A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8AF580-1CE9-798A-6DD5-C2FA35FC636A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8AF580-1CE9-798A-6DD5-C2FA35FC636A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051FEDBB-8800-65BC-01E1-E5D3E71B8D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051FEDBB-8800-65BC-01E1-E5D3E71B8D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051FEDBB-8800-65BC-01E1-E5D3E71B8D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051FEDBB-8800-65BC-01E1-E5D3E71B8D48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

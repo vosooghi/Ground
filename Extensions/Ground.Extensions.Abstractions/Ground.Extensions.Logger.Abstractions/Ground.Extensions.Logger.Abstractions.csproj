@@ -1,46 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-	  <TargetFramework>net9.0</TargetFramework>
-	  <ImplicitUsings>enable</ImplicitUsings>
-	  <Nullable>enable</Nullable>
-	  <Title>$(AssemblyName)</Title>
-	  <PackageReadmeFile>readme.md</PackageReadmeFile>
-	  <PackageTags>$(AssemblyName)</PackageTags>
-	  <Authors>Abbas Vosoughi</Authors>
-	  <Description>
-		  $(AssemblyName)
-		  MIT
-	  </Description>
-	  <PackageProjectUrl>https://github.com/vosooghi/Ground</PackageProjectUrl>
-	  <RepositoryUrl>https://github.com/vosooghi/Ground</RepositoryUrl>
-	  <RepositoryType>git</RepositoryType>
-	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-	  <Version>3.0.0</Version>
-	  <PackageIcon>Icon.png</PackageIcon>
-	  <PackageReleaseNotes>.Net 9 support</PackageReleaseNotes>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\Ground.Extensions.Caching.Abstractions\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\Ground.Extensions.Caching.Abstractions\readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="readme.md">
-      <PackagePath>\</PackagePath>
-      <Pack>True</Pack>
-    </None>
-  </ItemGroup>
-
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>true</IsPackable>
+		<Description>Provides abstractions for logging mechanisms. Interfaces defined in this package are used in Ground microservice framework.</Description>
+		<PackageTags>ground logger abstractions</PackageTags>
+	</PropertyGroup>
 </Project>

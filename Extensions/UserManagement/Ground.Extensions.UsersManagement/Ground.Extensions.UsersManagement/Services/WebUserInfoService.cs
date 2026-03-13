@@ -7,6 +7,9 @@ using Ground.Extensions.UsersManagement.Extensions;
 
 namespace Ground.Extensions.UsersManagement.Services
 {
+    /// <summary>
+    /// Provides user information based on the current HTTP context, such as user claims, IP address, and user agent. 
+    /// </summary>
     public class WebUserInfoService : IUserInfoService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;

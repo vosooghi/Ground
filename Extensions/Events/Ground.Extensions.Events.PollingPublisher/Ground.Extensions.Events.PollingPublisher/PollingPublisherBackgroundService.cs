@@ -9,8 +9,11 @@ using System.Diagnostics;
 
 namespace Ground.Extensions.Events.PollingPublisher
 {
+    /// <summary>
+    /// Background service that polls the outbox for events and publishes them to the message bus.
+    /// </summary>
     public class PollingPublisherBackgroundService : BackgroundService
-    {
+    {                
         private readonly ISendMessageBus _sendMessageBus;
         private readonly IOutBoxEventItemRepository _outBoxEventItemRepository;
         private readonly ILogger<PollingPublisherBackgroundService> _logger;
@@ -26,17 +29,24 @@ namespace Ground.Extensions.Events.PollingPublisher
             _logger = logger;
             _logger.LogInformation("PollingPublisherBackgroundService start working for {ApplicationName} at {DateTime}", _options.ApplicationName, DateTime.Now);
         }
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
                 try
                 {
-                    var outboxItems = _outBoxEventItemRepository.GetOutBoxEventItemsForPublishe(_options.SendCount);
-                    foreach (var item in outboxItems)
+                    var outboxItems = _outBoxEventItemRepository.GetOutBoxEventItemsForPublish(_options.SendCount);
+                    if (!outboxItems.Any())
                     {
-                        using Activity trace = StartChildActivity(item);
-                        _sendMessageBus.Send(new Parcel
+                        await Task.Delay(_options.SendInterval, stoppingToken);
+                        continue;
+                    }
+
+                    foreach (var item in outboxItems)
+                    {                        
+                        using Activity trace = StartLinkedActivity(item);
+                        await _sendMessageBus.Send(new Parcel
                         {
                             CorrelationId = item.AggregateId,
                             MessageBody = item.EventPayload,
@@ -59,21 +69,29 @@ namespace Ground.Extensions.Events.PollingPublisher
                     if (outboxItems.Any())
                     {
                         _logger.LogInformation("{Count} events {ApplicaotinName} at {DateTime} with id {Ids}", outboxItems.Count, _options.ApplicationName, DateTime.Now, string.Join(',', outboxItems.Select(c => c.EventId)));
-                    }
-                    await Task.Delay(_options.SendInterval, stoppingToken);
+                    }                    
+                }
+                catch (OperationCanceledException)
+                {
+                    // Graceful shutdown, do not log as error
+                    break;
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Exception acquired in PollingPublisherBackgroundService for application {ApplicaitonName}", _options.ApplicationName);
                     await Task.Delay(_options.ExceptionInterval, stoppingToken);
-
                 }
-
             }
+
             _logger.LogInformation("PollingPublisherBackgroundService stop working for {ApplicationName} at {DateTime}", _options.ApplicationName, DateTime.Now);
         }
 
-        private static Activity StartChildActivity(OutBoxEventItem item)
+        /// <summary>
+        /// Create a linked activity for the event being published
+        /// </summary>
+        /// <param name="item">The outbox event item for which to create the activity.</param>
+        /// <returns>The created activity.</returns>
+        private static Activity StartLinkedActivity(OutBoxEventItem item)
         {
             var trace = new Activity("PublishUsingPollingPublisher");
             if (item.TraceId != null && item.SpanId != null)

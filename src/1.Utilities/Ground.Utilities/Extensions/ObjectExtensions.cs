@@ -1,12 +1,18 @@
 ﻿using System.Data;
+using System.Collections;
 
 namespace Ground.Utilities.Extensions
 {
-
-    using System.Collections;
-
+    /// <summary>
+    /// Provides extension methods for objects, including a method to convert an object's properties to a query string format.
+    /// </summary>
     public static class ObjectExtensions
     {
+        /// <summary>
+        /// Converts the properties of an object to a query string format.
+        /// </summary>
+        /// <param name="obj">The object to convert.</param>
+        /// <returns>A query string representation of the object's properties.</returns>
         public static string ToQueryString(this object obj)
         {
             if (obj is null) throw new ArgumentNullException("Object");

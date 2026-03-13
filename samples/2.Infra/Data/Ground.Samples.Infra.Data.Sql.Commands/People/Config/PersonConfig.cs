@@ -2,11 +2,6 @@
 using Ground.Samples.Core.Domain.People.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Samples.Infra.Data.Sql.Commands.People.Config
 {

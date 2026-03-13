@@ -1,24 +1,27 @@
 ﻿namespace Ground.Extensions.MessageBus.Abstractions.Fakes
 {
+    /// <summary>
+    /// Provides a mock implementation of the <see cref="IMessageConsumer"/> interface for consuming command and event
+    /// messages in a simulated environment.
+    /// </summary>
     public class FakeMessageConsumer : IMessageConsumer
     {
-        public async Task<bool> ConsumeCommand(string sender, Parcel parcel)
+        public Task<bool> ConsumeCommand(string sender, Parcel parcel)
         {
             Consume("command", sender, parcel);
-            return true;
+            return Task.FromResult(true);
         }
 
-
-
-        public async Task<bool> ConsumeEvent(string sender, Parcel parcel)
+        public Task<bool> ConsumeEvent(string sender, Parcel parcel)
         {
             Consume("event", sender, parcel);
-            return true;
+            return Task.FromResult(true);
         }
 
-        private static void Consume(string type, string sender, Parcel parcel)
+        private static Task Consume(string type, string sender, Parcel parcel)
         {
-            Console.WriteLine($"Message {parcel.MessageName} of type {type} by Id {parcel.MessageId} from route {parcel.Route} from service {sender} Consumed");
+            // Parameters are intentionally unused in this fake implementation.
+            return Task.CompletedTask;
         }
     }
 }

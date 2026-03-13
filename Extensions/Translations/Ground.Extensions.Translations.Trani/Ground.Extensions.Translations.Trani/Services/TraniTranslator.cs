@@ -6,6 +6,9 @@ using Ground.Extensions.Translations.Trani.Options;
 using Microsoft.Extensions.Options;
 namespace Ground.Extensions.Translations.Trani.Services
 {
+    /// <summary>
+    /// An implementation of ITranslator interface that uses a SQL Server database to store and retrieve localization records. It loads all the localization records into memory and provides methods to get the value of a key for a specific culture. If the key is not found, it adds the key with the default value to the database and returns the key as the value. It also provides methods to get a formatted string with arguments and to concatenate multiple keys with a separator. The translator is culture-aware and uses the current culture of the application to determine which localization record to return.
+    /// </summary>
     public class TraniTranslator : ITranslator, IDisposable
     {
         private readonly string _currentCulture;

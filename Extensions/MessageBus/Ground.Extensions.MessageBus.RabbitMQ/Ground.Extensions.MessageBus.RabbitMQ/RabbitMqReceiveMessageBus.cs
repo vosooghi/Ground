@@ -10,6 +10,14 @@ using Ground.Extensions.MessageBus.RabbitMQ.Extensions;
 
 namespace Ground.Extensions.MessageBus.RabbitMQ
 {
+    /// <summary>
+    /// Provides a message bus implementation for receiving commands and events from RabbitMQ queues. Enables
+    /// subscribing to event topics and receiving command messages for a service using RabbitMQ as the transport.
+    /// </summary>
+    /// <remarks>RabbitMqReceiveMessageBus manages the creation and binding of queues for commands and events
+    /// based on service configuration. It supports dependency injection for message consumers and logs queue
+    /// operations. The class is thread-safe for typical usage scenarios and should be disposed when no longer needed to
+    /// release RabbitMQ resources.</remarks>
     public class RabbitMqReceiveMessageBus : IReceiveMessageBus, IDisposable
     {
         private readonly ILogger<RabbitMqReceiveMessageBus> _logger;
@@ -56,14 +64,14 @@ namespace Ground.Extensions.MessageBus.RabbitMQ
             _logger.LogInformation("Command Queue With Name {commandName} Created.", queue.QueueName);
         }
 
-        public void Subscribe(string serviceId, string eventName)
+        public async Task Subscribe(string serviceId, string eventName)
         {
             var route = $"{serviceId}.{RabbitMqSendMessageBusConstants.@event}.{eventName}";
             _channel.QueueBind(_eventQueueName, _rabbitMqOptions.ExchangeName, route);
             _logger.LogInformation("ServiceId: {serviceId} With EventName: {eventName} Binded.", serviceId, eventName);
         }
 
-        public void Receive(string commandName)
+        public async Task Receive(string commandName)
         {
             var route = $"{_rabbitMqOptions.ServiceName}.{RabbitMqSendMessageBusConstants.command}.{commandName}";
             _channel.QueueBind(_commandQueueName, _rabbitMqOptions.ExchangeName, route);

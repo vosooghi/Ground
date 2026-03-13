@@ -1,14 +1,12 @@
 ﻿using Ground.Core.RequestResponse.Queries;
 using Ground.Utilities.Extensions;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Infra.Data.Sql.Queries
 {
+    /// <summary>
+    /// Provides extension methods for repositories to support paginated queries.
+    /// </summary>
     public static class QueryRepositoryExtensions
     {
         public static async Task<PageData<TResult>> ToPagedData<TEntity, TQuery, TResult>(this IQueryable<TEntity> entities, PageQuery<PageData<TQuery>> query, Func<TEntity, TResult> selectFunc)

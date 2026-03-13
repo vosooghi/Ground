@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGroundNewtonSoftSerializer();
 builder.Services.AddGroundRabbitMqMessageBus(c =>
 {
-    c.PerssistMessage = true;
+    c.PersistMessage = true;
     c.ExchangeName = "SampleExchange";
     c.ServiceName = "SampleApplciatoin";
     c.Url = "localhost";//@"amqp://guest:guest@localhost:5672/";

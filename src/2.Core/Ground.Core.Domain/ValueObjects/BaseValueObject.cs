@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ground.Core.Domain.ValueObjects
+﻿namespace Ground.Core.Domain.ValueObjects
 {
     /// <summary>
-    /// Value Objects for all entities
-    /// https://martinfowler.com/bliki/ValueObject.html
+    /// Defines the base class for value objects.
     /// </summary>
-    /// <typeparam name="TValueObject"></typeparam>
+    /// <typeparam name="TValueObject">The type of the value object.</typeparam>
     public abstract class BaseValueObject<TValueObject> : IEquatable<TValueObject>
             where TValueObject : BaseValueObject<TValueObject>
     {
-        public bool Equals(TValueObject other) => this == other;
+        public bool Equals(TValueObject? other)
+        {
+            if (other is null)
+                return false;
+            return this == other;
+        }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is TValueObject otherObject)
             {
@@ -24,6 +22,11 @@ namespace Ground.Core.Domain.ValueObjects
             }
             return false;
         }
+
+        /// <summary>
+        /// Returns a hash code for the value object based on its components.
+        /// </summary>
+        /// <returns>A hash code for the value object.</returns>
         public override int GetHashCode()
         {
             return GetEqualityComponents()
@@ -32,7 +35,7 @@ namespace Ground.Core.Domain.ValueObjects
         }
 
         /// <summary>
-        /// Returens each property for comprising.
+        /// Returns the components of the value object that are used for equality comparison.
         /// </summary>
         /// <returns></returns>
         protected abstract IEnumerable<object> GetEqualityComponents();

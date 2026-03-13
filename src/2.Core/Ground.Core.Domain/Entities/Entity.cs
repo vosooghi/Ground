@@ -1,16 +1,11 @@
 ﻿using Ground.Core.Domain.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Core.Domain.Entities
 {
     /// <summary>
-    /// Base Entity Class
+    /// Represents the base class for an entity in the domain model.
+    /// An entity is an object that is defined by its identity rather than its attributes.
     /// </summary>
-
     public abstract class Entity<TId> : IAuditableEntity
               where TId : struct,
               IComparable,
@@ -20,15 +15,14 @@ namespace Ground.Core.Domain.Entities
               IFormattable
     {
         /// <summary>
-        /// Entity Id for sql server
-        /// For saving and retrieving in/from database
+        /// Entity Id for SQL Server.
+        /// This Id is used for saving and retrieving the entity in/from the database.
         /// </summary>
         public TId Id { get; protected set; }
 
         /// <summary>
-        /// Entity Id
-        /// Entity is identified by this BusinessId
-        /// All relations are implemented by BusinessId
+        /// Business Id for the entity.
+        /// The entity is identified by BusinessId, and all relations are implemented by BusinessId.
         /// </summary>
         public BusinessId BusinessId { get; protected set; } = BusinessId.FromGuid(Guid.NewGuid());
 
@@ -40,7 +34,7 @@ namespace Ground.Core.Domain.Entities
 
 
         #region Equality Check
-        public bool Equals(Entity<TId>? other) => this == other;
+        public bool Equals(Entity<TId>? other) => other is not null && this == other;
         public override bool Equals(object? obj) =>
              obj is Entity<TId> otherObject && Id.Equals(otherObject.Id);
 
@@ -62,7 +56,9 @@ namespace Ground.Core.Domain.Entities
         #endregion
     }
 
-
+    /// <summary>
+    /// Represents the base class for an entity in the domain model with long Id.
+    /// </summary>
     public abstract class Entity : Entity<long>
     {
 

@@ -1,15 +1,12 @@
 ﻿using Ground.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ground.Infra.Data.Sql.Commands.Extensions
 {
-
+    /// <summary>
+    /// An extension class for the ChangeTracker to provide methods for retrieving changed aggregates and aggregates with events.
+    /// </summary>
     public static class ChangeTrackerExtensions
     {
         public static List<AggregateRoot> GetChangedAggregates(this ChangeTracker changeTracker) =>

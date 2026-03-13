@@ -1,5 +1,8 @@
 ﻿namespace Ground.Extensions.Caching.Abstractions
 {
+    /// <summary>
+    /// A fake implementation of ICacheAdapter for testing or non-caching scenarios.
+    /// </summary>
     public class FakeCacheAdapter : ICacheAdapter
     {
         public void Add<TInput>(string key, TInput obj, DateTime? AbsoluteExpiration, TimeSpan? SlidingExpiration) { }

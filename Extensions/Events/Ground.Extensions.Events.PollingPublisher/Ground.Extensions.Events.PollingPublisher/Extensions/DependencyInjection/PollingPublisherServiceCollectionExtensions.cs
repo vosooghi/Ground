@@ -4,6 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Ground.Extensions.Events.PollingPublisher.Extensions.DependencyInjection
 {
+    /// <summary>
+    /// This class contains extension methods for registering the Polling Publisher services in the DI container.
+    /// </summary>
     public static class PollingPublisherServiceCollectionExtensions
     {
         public static IServiceCollection AddGroundPollingPublisher(this IServiceCollection services, IConfiguration configuration)

@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Ground.Infra.Data.Sql.Commands.Interceptors
 {
+    /// <summary>
+    /// Provides an interceptor for Entity Framework Core that automatically populates shadow properties related to auditing.
+    /// </summary>
     public class AddAuditDataInterceptor : SaveChangesInterceptor
     {
 
