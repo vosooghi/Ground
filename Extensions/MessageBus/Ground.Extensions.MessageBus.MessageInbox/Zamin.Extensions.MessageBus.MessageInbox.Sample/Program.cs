@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -19,7 +19,7 @@ builder.Services.AddScoped<IEventDispatcher, EventDistpacher>();
 builder.Services.AddGroundNewtonSoftSerializer();
 builder.Services.AddGroundRabbitMqMessageBus(c =>
 {
-    c.PerssistMessage = true;
+    c.PersistMessage = true;
     c.ExchangeName = "NewsCmsExchange";//"MiniBlogExchange";
     c.ServiceName = "BasicInfo";//"SampleApplciatoinReceiver";
     c.Url = "localhost";//@"amqp://guest:guest@localhost:5672/";
@@ -47,7 +47,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("BasicInfo", "KeywordCreated"));
+await app.Services.InitializeRabbitMqPublisherAsync();
+await app.Services.ReceiveEventFromRabbitMqMessageBusAsync(new KeyValuePair<string, string>("BasicInfo", "KeywordCreated"));
 
 //app.UseHttpsRedirection();
 

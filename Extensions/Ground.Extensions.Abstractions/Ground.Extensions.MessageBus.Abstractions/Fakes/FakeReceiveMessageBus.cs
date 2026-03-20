@@ -7,7 +7,12 @@ namespace Ground.Extensions.MessageBus.Abstractions.Fakes
     /// development environments.
     /// </summary>
     public class FakeReceiveMessageBus : IReceiveMessageBus
-    {                
+    {
+        public Task InitializeAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task Receive(string commandName)
         {
             return Task.CompletedTask;
@@ -16,7 +21,6 @@ namespace Ground.Extensions.MessageBus.Abstractions.Fakes
         public Task Subscribe(string serviceId, string eventName)
         {
             return Task.CompletedTask;
-        }
-        
+        }        
     }
 }

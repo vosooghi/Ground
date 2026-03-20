@@ -13,6 +13,11 @@ namespace Ground.Extensions.MessageBus.Abstractions.Fakes
         {
         }
 
+        public Task InitializeAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task Publish<TInput>(TInput input)
         {
             return Task.CompletedTask;

@@ -11,6 +11,7 @@
         /// <typeparam name="TInput">The type of the message to publish.</typeparam>
         /// <param name="input">The message instance to publish.</param>
         Task Publish<TInput>(TInput input);
+
         /// <summary>
         /// Sends a command with the specified data to a target service for processing.
         /// </summary>
@@ -21,6 +22,7 @@
         /// <param name="commandData">The data associated with the command. The structure and content should match the expectations of the
         /// destination service for the specified command.</param>
         Task SendCommandTo<TCommandData>(string destinationService, string commandName, TCommandData commandData);
+
         /// <summary>
         /// Sends a command with the specified data to a target service for processing.
         /// </summary>
@@ -33,10 +35,13 @@
         /// <param name="commandData">The data payload associated with the command. The structure and content should match the expectations of the
         /// destination service for the specified command.</param>
         Task SendCommandTo<TCommandData>(string destinationService, string commandName, string correlationId, TCommandData commandData);
+
         /// <summary>
         /// Sends the specified parcel for delivery using the configured transport mechanism.
         /// </summary>
         /// <param name="parcel">The parcel to be sent. Cannot be null.</param>
         Task Send(Parcel parcel);
+
+        Task InitializeAsync();
     }
 }

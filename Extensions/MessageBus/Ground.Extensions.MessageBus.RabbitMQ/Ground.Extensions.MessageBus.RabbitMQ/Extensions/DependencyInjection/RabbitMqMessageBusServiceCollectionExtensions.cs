@@ -40,39 +40,57 @@ namespace Ground.Extensions.DependencyInjection
                     //Uri = new Uri(options.Value.Url)
                     HostName = options.Value.Url
                 };
-                var connection = factory.CreateConnection();
+                var connection = factory.CreateConnectionAsync();
                 return connection;
             });
-            services.AddScoped<ISendMessageBus, RabbitMqSendMessageBus>();
+            services.AddSingleton<IConnection>(sp =>
+            {
+                var options = sp.GetRequiredService<IOptions<RabbitMqOptions>>();
+                var factory = new ConnectionFactory()
+                {
+                    HostName = options.Value.Url
+                };
+                return factory.CreateConnectionAsync().GetAwaiter().GetResult();
+            });
 
+            services.AddSingleton<ISendMessageBus, RabbitMqSendMessageBus>();
             services.AddSingleton<IReceiveMessageBus, RabbitMqReceiveMessageBus>();
+
             return services;
         }
 
-        public static void ReceiveCommandFromRabbitMqMessageBus(this IServiceProvider serviceProvider, params string[] commands)
+        public static async Task ReceiveCommandFromRabbitMqMessageBusAsync(this IServiceProvider serviceProvider, params string[] commands)
         {
-            if (commands is null)
-            {
-                throw new ArgumentNullException(nameof(commands));
-            }
+            if (commands is null) throw new ArgumentNullException(nameof(commands));
+
             var receiveMessageBus = serviceProvider.GetRequiredService<IReceiveMessageBus>();
+
+            await receiveMessageBus.InitializeAsync();
+
             foreach (var command in commands)
             {
-                receiveMessageBus.Receive(command);
+                await receiveMessageBus.Receive(command);
             }
         }
 
-        public static void ReceiveEventFromRabbitMqMessageBus(this IServiceProvider serviceProvider, params KeyValuePair<string, string>[] events)
+        public static async Task ReceiveEventFromRabbitMqMessageBusAsync(this IServiceProvider serviceProvider, params KeyValuePair<string, string>[] events)
         {
-            if (events is null)
-            {
-                throw new ArgumentNullException(nameof(events));
-            }
+            if (events is null) throw new ArgumentNullException(nameof(events));
+
             var receiveMessageBus = serviceProvider.GetRequiredService<IReceiveMessageBus>();
+            
+            await receiveMessageBus.InitializeAsync();
+
             foreach (var @event in events)
             {
-                receiveMessageBus.Subscribe(@event.Key, @event.Value);
+                await receiveMessageBus.Subscribe(@event.Key, @event.Value);
             }
+        }
+        
+        public static async Task InitializeRabbitMqPublisherAsync(this IServiceProvider serviceProvider)
+        {
+            var publisherBus = serviceProvider.GetRequiredService<ISendMessageBus>();
+            await publisherBus.InitializeAsync();
         }
     }
 }
