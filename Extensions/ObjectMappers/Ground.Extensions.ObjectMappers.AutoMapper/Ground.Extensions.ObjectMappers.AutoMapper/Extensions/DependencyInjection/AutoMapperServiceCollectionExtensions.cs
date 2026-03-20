@@ -21,7 +21,7 @@ namespace Ground.Extensions.DependencyInjection
 
             var assemblies = GetAssemblies(option.AssmblyNamesForLoadProfiles);
 
-            return services.AddAutoMapper(assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();            
+            return services.AddAutoMapper(cfg=> { }, assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();            
         }
 
         public static IServiceCollection AddGroundAutoMapperProfiles(this IServiceCollection services, Action<AutoMapperOption> setupAction)
@@ -31,7 +31,7 @@ namespace Ground.Extensions.DependencyInjection
 
             var assemblies = GetAssemblies(option.AssmblyNamesForLoadProfiles);
 
-            return services.AddAutoMapper(assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();
+            return services.AddAutoMapper(cfg => { }, assemblies).AddSingleton<IMapperAdapter, AutoMapperAdapter>();
         }
 
         private static List<Assembly> GetAssemblies(string assmblyNames)

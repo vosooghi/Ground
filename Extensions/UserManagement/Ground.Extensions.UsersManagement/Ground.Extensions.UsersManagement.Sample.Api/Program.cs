@@ -1,5 +1,5 @@
-using Microsoft.OpenApi.Models;
 using Ground.Extensions.DependencyInjection;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,20 +19,9 @@ builder.Services.AddSwaggerGen(options =>
         Description = "Bearer Authentication with JWT Token",
         Type = SecuritySchemeType.Http,
     });
-
-    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
     {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Id = "Bearer",
-                    Type = ReferenceType.SecurityScheme,
-                }
-            },
-            new List<string>()
-        }
+        [new OpenApiSecuritySchemeReference("Bearer", document)] = []
     });
 });
 
