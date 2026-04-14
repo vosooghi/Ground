@@ -1,6 +1,4 @@
-﻿using static IdentityModel.OidcConstants;
-
-namespace Ground.Utilities.Authentication.ApiAuthentication.Options
+﻿namespace Ground.Utilities.Authentication.ApiAuthentication.Options
 {
     public sealed class ApiAuthenticationOption
     {

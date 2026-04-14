@@ -20,7 +20,6 @@ namespace Ground.Utilities.OpenTelemetryRegistration.Sample.Models
                 context.People.AddRange( new Person []{
 
                     new Person { FirstName = "Abbas", LastName = "Vosoughi" },
-                    new Person { FirstName = "Radmehr", LastName = "Vosoughi" },
                 });
                 context.SaveChanges();
             }

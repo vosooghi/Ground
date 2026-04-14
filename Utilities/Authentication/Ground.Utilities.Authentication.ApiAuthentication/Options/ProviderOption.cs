@@ -2,6 +2,9 @@
 
 namespace Ground.Utilities.Authentication.ApiAuthentication.Options
 {
+    /// <summary>
+    /// Represents the configuration options for an authentication provider in the API authentication system.
+    /// </summary>
     public sealed class ProviderOption
     {
         public bool Enabled { get; set; } = true;
@@ -11,7 +14,7 @@ namespace Ground.Utilities.Authentication.ApiAuthentication.Options
         public string? HttpClientFactoryName { get; set; }
         public TokenType TokenTypeSupport { get; set; } = TokenType.Jwt;
         public JwtTokenConfigOption JwtTokenConfig { get; set; } = new();
-        public RefrenceTokenConfigOption RefrenceTokenConfig { get; set; } = new();
+        public ReferenceTokenConfigOption ReferenceTokenConfig { get; set; } = new();
         public string UserIdentifierClaimType { get; set; } = ClaimTypes.NameIdentifier;
         public RegisterUserInfoClaimsOption RegisterUserInfoClaims { get; set; } = new();
         public List<UserClaimTypeMapRuleOption> UserClaimTypeMapRules { get; set; } = [];

@@ -4,6 +4,9 @@ using Serilog.Events;
 
 namespace Ground.Utilities.SerilogRegistration.Enrichers
 {
+    /// <summary>
+    /// Add user/request identity context to each LogEvent using the <inheritdoc cref="IUserInfoService"/>
+    /// </summary>
     public class GroundUserInfoEnricher : ILogEventEnricher
     {
         private readonly IUserInfoService _userInfoService;
@@ -15,23 +18,14 @@ namespace Ground.Utilities.SerilogRegistration.Enrichers
 
         public void Enrich(LogEvent logEvent, ILogEventPropertyFactory factory)
         {
-            string userName;
-            string UserId;
-            string UserIp;
-            string clientId;
-
-            userName = _userInfoService.GetUsername();
-            if (string.IsNullOrEmpty(userName))
-                userName = "Unknown";
-            UserId = _userInfoService.UserIdOrDefault();
-            UserIp = _userInfoService.GetUserIp();
-            clientId = _userInfoService.GetClaim("client_id");
-            if (string.IsNullOrEmpty(clientId))
-                clientId = "Unknown";
+            var userName = _userInfoService.GetUsername() ?? "Unknown";
+            var userId = _userInfoService.UserIdOrDefault() ?? "Unknown";
+            var userIp = _userInfoService.GetUserIp() ?? "Unknown";
+            var clientId = _userInfoService.GetClaim("client_id") ?? "Unknown";
 
             var userNameProperty = factory.CreateProperty("UserName", userName);
-            var userIdProperty = factory.CreateProperty("UserId", UserId);
-            var userIpProperty = factory.CreateProperty("UserIp", UserIp);
+            var userIdProperty = factory.CreateProperty("UserId", userId);
+            var userIpProperty = factory.CreateProperty("UserIp", userIp);
             var clientIdProperty = factory.CreateProperty("ClientId", clientId);
 
             logEvent.AddPropertyIfAbsent(userNameProperty);

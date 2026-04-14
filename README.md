@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/vosooghi/Ground"><img src="https://raw.githubusercontent.com/vosooghi/Ground/main/src/2.Core/Ground.Core.Domain/Icon.png" alt="Markdownify" width="200"></a>
+  <a href="https://github.com/vosooghi/Ground"><img src="https://raw.githubusercontent.com/vosooghi/Ground/main/Icon.png" alt="Markdownify" width="200"></a>
   <br>
   Ground Framework
   <br>
