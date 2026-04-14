@@ -12,7 +12,7 @@ namespace Ground.Extensions.DependencyInjection
                                                                      IServiceCollection services,
                                                                      ProviderOption provider)
         {
-            if (string.IsNullOrWhiteSpace(provider.RefrenceTokenConfig.ClientId) || string.IsNullOrWhiteSpace(provider.RefrenceTokenConfig.ClientSecret))
+            if (string.IsNullOrWhiteSpace(provider.ReferenceTokenConfig.ClientId) || string.IsNullOrWhiteSpace(provider.ReferenceTokenConfig.ClientSecret))
                 throw new ArgumentNullException($"{provider.Scheme} ({provider.Authority}) , ClientId or ClientSecret is null or white space or empty");
 
             string httpClientName = provider.AddProviderHttpClient(services);
@@ -26,8 +26,8 @@ namespace Ground.Extensions.DependencyInjection
                     option.IntrospectionEndpoint = $"{provider.Authority}{provider.EndpointsPath.IntrospectionEndpoint}";
                 }
 
-                option.ClientId = provider.RefrenceTokenConfig.ClientId;
-                option.ClientSecret = provider.RefrenceTokenConfig.ClientSecret;
+                option.ClientId = provider.ReferenceTokenConfig.ClientId;
+                option.ClientSecret = provider.ReferenceTokenConfig.ClientSecret;
 
                 option.Events = new OAuth2IntrospectionEvents()
                 {

@@ -3,7 +3,6 @@ using Ground.Utilities.OpenTelemetryRegistration.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
@@ -12,72 +11,70 @@ namespace Ground.Extensions.DependencyInjection
 {
     public static class OpenTeletmetryServiceCollectionExtensions
     {
+        private const string DefaultSectionName = "OpenTeletmetryOptions";
+
         public static IServiceCollection AddGroundObservabilitySupport(this IServiceCollection services, IConfiguration configuration)
         {
+            var section = configuration.GetSection(DefaultSectionName);
 
-            services.Configure<OpenTeletmetryOptions>(configuration);
-            RegisterTraceServices(services);
-            RegisterMetricService(services);
+            services.Configure<OpenTeletmetryOptions>(section);
+
+            RegisterTraceServices(services, section);
+            RegisterMetricService(services, section);
+
             return services;
         }
 
         public static IServiceCollection AddGroundObservabilitySupport(this IServiceCollection services, IConfiguration configuration, string sectionName)
         {
-            services.AddGroundObservabilitySupport(configuration.GetSection(sectionName));
+            var section = configuration.GetSection(sectionName);
+
+            services.Configure<OpenTeletmetryOptions>(section);
+
+            RegisterTraceServices(services, section);
+            RegisterMetricService(services, section);
+
             return services;
         }
 
-        public static IServiceCollection AddGroundObservabilitySupport(this IServiceCollection services, Action<OpenTeletmetryOptions> setupAction)
+        private static void RegisterTraceServices(IServiceCollection services, IConfiguration section)
         {
-            services.Configure(setupAction);
-            RegisterTraceServices(services);
-            RegisterMetricService(services);
-            return services;
-        }
-
-        private static IServiceCollection RegisterTraceServices(IServiceCollection services)
-        {
-            var serviceProvider = services.BuildServiceProvider();
-            var options = serviceProvider.GetRequiredService<IOptions<OpenTeletmetryOptions>>().Value;
+            var options = section.Get<OpenTeletmetryOptions>() ?? new OpenTeletmetryOptions();
 
             services.AddOpenTelemetry()
                 .WithTracing(tracerProviderBuilder =>
                 {
-                    string serviceName = $"{options.ApplicationName}.{options.ServiceName}";
+                        var serviceName = $"{options.ApplicationName}.{options.ServiceName}";
+
                     tracerProviderBuilder
-                    .SetResourceBuilder(ResourceBuilder.CreateDefault()
+                        .SetResourceBuilder(ResourceBuilder.CreateDefault()
                             .AddService(serviceName: serviceName, serviceVersion: options.ServiceVersion, serviceInstanceId: options.ServiceId))
-                    .AddHttpClientInstrumentation()
-                    .AddAspNetCoreInstrumentation()
-                    .AddSqlClientInstrumentation()
-                    .AddEntityFrameworkCoreInstrumentation()
-                    .SetSampler(new TraceIdRatioBasedSampler(options.SamplingProbability))
-                    .AddOtlpExporter(oltpOptions =>
-                    {
-                        oltpOptions.Endpoint = new Uri(options.OltpEndpoint);
-                        oltpOptions.ExportProcessorType = options.ExportProcessorType;
-                    });
+                        .AddHttpClientInstrumentation()
+                        .AddAspNetCoreInstrumentation()
+                        .AddSqlClientInstrumentation()
+                        .AddEntityFrameworkCoreInstrumentation()
+                        .SetSampler(new TraceIdRatioBasedSampler(options.SamplingProbability))
+                        .AddOtlpExporter(oltpOptions =>
+                        {
+                            oltpOptions.Endpoint = new Uri(options.OltpEndpoint);
+                            oltpOptions.ExportProcessorType = options.ExportProcessorType;
+                        });
                 });
-            return services;
         }
 
-
-
-        public static IServiceCollection RegisterMetricService(this IServiceCollection services)
+        private static void RegisterMetricService(IServiceCollection services, IConfiguration section)
         {
-            var serviceProvider = services.BuildServiceProvider();
-            var options = serviceProvider.GetRequiredService<IOptions<OpenTeletmetryOptions>>().Value;
+            var options = section.Get<OpenTeletmetryOptions>() ?? new OpenTeletmetryOptions();
 
-            services.AddOpenTelemetry().WithMetrics(opts => opts
-                        .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(options.ApplicationName))
-                        .AddMeter(options.ApplicationName)
-                        .AddRuntimeInstrumentation()
-                        .AddPrometheusExporter());
+            services.AddOpenTelemetry()
+                .WithMetrics(opts => opts
+                    .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(options.ApplicationName))
+                    .AddMeter(options.ApplicationName)
+                    .AddRuntimeInstrumentation()
+                    .AddPrometheusExporter());
 
             services.AddSingleton(new MetricReporter(options.ApplicationName, options.ServiceName));
-            return services;
         }
-
 
         public static IApplicationBuilder UseGroundObservabilityMiddlewares(this IApplicationBuilder app)
         {

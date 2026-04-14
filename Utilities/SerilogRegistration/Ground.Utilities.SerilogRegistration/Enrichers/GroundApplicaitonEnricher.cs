@@ -6,6 +6,9 @@ using System.Reflection;
 
 namespace Ground.Utilities.SerilogRegistration.Enrichers
 {
+    /// <summary>
+    /// Add a fixed set of contextual properties to every Serilog LogEvent (only if the property isn’t already present).
+    /// </summary>
     public class GroundApplicaitonEnricher : ILogEventEnricher
     {
         private readonly SerilogApplicationEnricherOptions _options;
@@ -20,7 +23,7 @@ namespace Ground.Utilities.SerilogRegistration.Enrichers
             var serviceVersionProperty = propertyFactory.CreateProperty(nameof(_options.ServiceVersion), _options.ServiceVersion);
             var serviceIdProperty = propertyFactory.CreateProperty(nameof(_options.ServiceId), _options.ServiceId);
             var machineNameProperty = propertyFactory.CreateProperty(nameof(Environment.MachineName), Environment.MachineName);
-            var entryPointProperty = propertyFactory.CreateProperty("EntryPoint", Assembly.GetEntryAssembly().GetName().Name);
+            var entryPointProperty = propertyFactory.CreateProperty("EntryPoint", Assembly.GetEntryAssembly()?.GetName().Name);
 
             logEvent.AddPropertyIfAbsent(applicationNameProperty);
             logEvent.AddPropertyIfAbsent(serviceNameProperty);
